@@ -285,12 +285,19 @@
     .hero-name {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(3.5rem, 7vw, 7rem);
-      line-height: 0.95;
+      line-height: 0.92;
       letter-spacing: 0.04em;
-      color: #fff;
       margin-bottom: 1rem;
     }
-    .hero-name span { color: var(--accent); }
+    #name-line-1 { color: var(--text); display: block; }
+    .accent-line { color: var(--accent); display: block; }
+    .letter {
+      display: inline-block;
+      transition: color 0.18s ease, transform 0.22s var(--ease-spring), text-shadow 0.18s ease;
+      cursor: default;
+      will-change: transform, color;
+    }
+    .letter-space { display: inline-block; width: 0.28em; }
 
     .hero-role {
       font-family: 'Barlow Condensed', sans-serif;
@@ -1032,8 +1039,8 @@
             AVAILABLE FOR HIRE · 2026
           </div>
           <h1 class="hero-name load-anim">
-            MD. WAHIDUR<br>
-            <span>RAHMAN PUSON</span>
+            <div class="name-line" id="name-line-1">MD. WAHIDUR</div>
+            <div class="name-line accent-line" id="name-line-2">RAHMAN PUSON</div>
           </h1>
           <div class="hero-role load-anim">
             Web & App Developer · IT Specialist · Digital Consultant
@@ -1764,6 +1771,49 @@
     applyStagger('.skills-grid');
     applyStagger('.pricing-grid');
     applyStagger('#panel-apps .pricing-grid');
+
+    /* Per-letter name hover */
+    const LETTER_COLORS = [
+      '#00d4ff', '#f5c842', '#00e676', '#a78bfa',
+      '#ff6b35', '#ff4d6d', '#4cc9f0', '#7fff00'
+    ];
+
+    function splitNameLetters() {
+      const heroName = document.querySelector('.hero-name');
+      if (!heroName) return;
+
+      heroName.querySelectorAll('.name-line').forEach(line => {
+        const chars = line.textContent.split('');
+        line.innerHTML = chars.map(char =>
+          char === ' '
+            ? '<span class="letter-space"> </span>'
+            : `<span class="letter interactive">${char}</span>`
+        ).join('');
+      });
+
+      document.querySelectorAll('.letter').forEach(letter => {
+        let resetTimer;
+        letter.addEventListener('mouseenter', () => {
+          clearTimeout(resetTimer);
+          document.body.classList.add('hovering-letter');
+          document.body.classList.remove('hovering-interactive');
+          const color = LETTER_COLORS[Math.floor(Math.random() * LETTER_COLORS.length)];
+          letter.style.color = color;
+          letter.style.transform = 'translateY(-8px) scale(1.15)';
+          letter.style.textShadow = `0 0 24px ${color}90, 0 0 48px ${color}35`;
+        });
+        letter.addEventListener('mouseleave', () => {
+          document.body.classList.remove('hovering-letter');
+          resetTimer = setTimeout(() => {
+            letter.style.color = '';
+            letter.style.transform = '';
+            letter.style.textShadow = '';
+          }, 120);
+        });
+      });
+    }
+
+    splitNameLetters();
   </script>
 </body>
 </html>
