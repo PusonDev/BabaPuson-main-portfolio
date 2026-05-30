@@ -1277,11 +1277,18 @@
       }
       .hero-right, .code-block { display: none; }
 
-      #services, #projects, #skills, #pricing, #contact {
+      section, #services, #projects, #skills, #pricing, #contact {
         padding: 5rem 1.5rem;
       }
+      .hero-about .hero-content { padding: 5rem 1.5rem 3rem; }
+      .about-grid, .farm-intro { grid-template-columns: 1fr; }
+      .profile-card { position: static; }
+      .bsf-flow { grid-template-columns: repeat(2, 1fr); }
+      .bsf-step:nth-child(2n) { border-right: none; }
+      .bsf-step { border-bottom: 1px solid rgba(0,230,118,0.1); }
+      .farm-table { display: block; overflow-x: auto; white-space: nowrap; }
 
-      .hero-name { font-size: clamp(3rem, 10vw, 4.5rem); }
+      .hero-name { font-size: clamp(2.8rem, 10vw, 4.5rem); }
       .hero-stats {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1335,341 +1342,667 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-left">
-        <div class="hero-content">
-          <div class="hero-eyebrow load-anim">
-            <span class="status-dot"></span>
-            AVAILABLE FOR HIRE · 2026
-          </div>
-          <h1 class="hero-name load-anim">
-            <div class="name-line" id="name-line-1">MD. WAHIDUR</div>
-            <div class="name-line accent-line" id="name-line-2">RAHMAN PUSON</div>
-          </h1>
-          <div class="hero-role load-anim">
-            Web & App Developer · IT Specialist · Digital Consultant
-          </div>
-          <p class="hero-desc load-anim">
-            I build complete digital ecosystems for businesses — not just websites,
-            but connected systems that capture leads, automate marketing, and work
-            while you sleep. Multi-platform apps in Electron, Flutter & Next.js.
-            Based in Dhaka — working globally.
-          </p>
-          <div class="hero-btns load-anim">
-            <a href="#projects" class="btn-primary btn-magnetic interactive">→ View Projects</a>
-            <a href="about.html" class="btn-knowmore btn-magnetic interactive">◉ Know More About Me</a>
-          </div>
-          <div class="hero-stats load-anim">
-            <div class="stat">
-              <div><span class="counter" data-target="15" data-suffix="+">0</span></div>
-              <div class="stat-label">PC Builds</div>
-            </div>
-            <div class="stat">
-              <div><span class="counter" data-target="3">0</span></div>
-              <div class="stat-label">Platforms Shipped</div>
-            </div>
-            <div class="stat">
-              <div><span class="counter" data-target="500" data-suffix="+">0</span></div>
-              <div class="stat-label">FPS Achieved</div>
-            </div>
-            <div class="stat">
-              <div>2026</div>
-              <div class="stat-label">Active</div>
-            </div>
-          </div>
+    <section class="hero hero-about" id="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow load-anim">
+          <span class="status-dot"></span>
+          FULL STORY · ALL THREE DOMAINS
         </div>
-      </div>
-      <div class="hero-right">
-        <div class="code-block">
-          <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="code-filename">ultrasave.config.js</span>
+        <h1 class="hero-name load-anim">
+          <div class="name-line" id="name-line-1">MD. WAHIDUR</div>
+          <div class="name-line accent-line" id="name-line-2">RAHMAN PUSON</div>
+        </h1>
+        <div class="hero-roles load-anim">
+          <span class="role-item" style="color:var(--accent)">IT Specialist &amp; Hardware Engineer</span>
+          <span class="role-sep">·</span>
+          <span class="role-item" style="color:var(--violet)">Cross-Platform App Developer</span>
+          <span class="role-sep">·</span>
+          <span class="role-item" style="color:var(--green)">Urban Agri-Tech Practitioner</span>
+        </div>
+        <p class="hero-desc load-anim">
+          Based in Bashabo Kodomtola, Dhaka · BSc CSE at BIST · Building digital
+          ecosystems by day, engineering rooftop farms by evening. Three parallel
+          lives. Zero compromises. Heading to Australia.
+        </p>
+        <div class="hero-btns load-anim">
+          <a href="index.html" class="btn-primary btn-magnetic btn-pulse interactive">← Back to Portfolio</a>
+          <a href="#contact" class="btn-outline btn-magnetic interactive">Let's Work Together</a>
+        </div>
+        <div class="domain-strip load-anim">
+          <div class="domain-pill" style="border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.05)">
+            <span>🤖</span>
+            <span style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--accent)">01</span>
+            <span style="font-family:'JetBrains Mono';font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em">AI &amp; Hardware</span>
           </div>
-          <pre><code><span class="cm">// UltraSave Ecosystem Config</span>
-<span class="kw">export default</span> {
-  <span class="key">name</span>: <span class="str">'UltraSave'</span>,
-  <span class="key">platforms</span>: [
-    <span class="str">'windows'</span>, <span class="str">'android'</span>, <span class="str">'web'</span>
-  ],
-  <span class="key">engine</span>: <span class="str">'yt-dlp + ffmpeg'</span>,
-  <span class="key">stack</span>: {
-    <span class="key">desktop</span>: <span class="str">'Electron + React + Vite'</span>,
-    <span class="key">mobile</span>:  <span class="str">'Flutter + Dart'</span>,
-    <span class="key">web</span>:     <span class="str">'Next.js'</span>
-  },
-  <span class="key">monetization</span>: [<span class="str">'AdMob'</span>, <span class="str">'AdSense'</span>],
-  <span class="key">adFilter</span>: <span class="str">'halal'</span>,
-  <span class="key">status</span>: <span class="str">'ACTIVE'</span> <span class="cm">✓</span>
-}</code></pre>
+          <span style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--muted);opacity:0.3">—</span>
+          <div class="domain-pill" style="border-color:rgba(167,139,250,0.25);background:rgba(167,139,250,0.05)">
+            <span>⚙️</span>
+            <span style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--violet)">02</span>
+            <span style="font-family:'JetBrains Mono';font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em">App Development</span>
+          </div>
+          <span style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--muted);opacity:0.3">—</span>
+          <div class="domain-pill" style="border-color:rgba(0,230,118,0.25);background:rgba(0,230,118,0.05)">
+            <span>🌾</span>
+            <span style="font-family:'Bebas Neue';font-size:1.4rem;color:var(--green)">03</span>
+            <span style="font-family:'JetBrains Mono';font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em">Farming &amp; Agri-Tech</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="section-label reveal">01 — WHAT I BUILD</div>
-      <h2 class="section-title reveal">FULL BUSINESS<br>DIGITAL ECOSYSTEMS</h2>
-      <p class="section-sub reveal">
-        Not just a website. A connected system that captures leads,
-        builds your audience, and works automatically.
-      </p>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="card-num">01</div>
-          <div class="card-icon">🌐</div>
-          <div class="card-title">Professional Website</div>
-          <p class="card-body">Not just a page — a fast, mobile-first business site with CMS, SEO basics, SSL, contact form. Leads sent directly to owner's WhatsApp.</p>
-          <ul class="card-list">
-            <li>WordPress or Next.js</li>
-            <li>Page speed optimized</li>
-            <li>Booking or inquiry form</li>
-          </ul>
+    <!-- WHO I AM -->
+    <section id="about" style="background: var(--bg2)">
+      <div class="section-label reveal">00 — PERSONAL PROFILE</div>
+      <h2 class="section-title reveal">THE FULL PICTURE</h2>
+      <p class="section-sub reveal">Not just a CV. Every data point verified. Zero hallucination.</p>
+      <div class="about-grid">
+        <div class="bio-text reveal">
+          <p>I'm Md. Wahidur Rahman Puson — based in Bashabo Kodomtola, Dhaka, Bangladesh. Currently pursuing a B.Sc. in Computer Science and Engineering at BIST (Bangladesh Institute of Science and Technology), running three parallel ventures most people would consider full-time careers individually.</p>
+          <p>In AI and hardware engineering, I build and diagnose high-performance PCs, tune Windows kernels to extract maximum performance from AMD Ryzen systems, and integrate autonomous AI agents — Cline, OpenHands, Devin, Google Anti-Gravity — into real development workflows. I've recovered a completely dead system after an overclocking failure via CMOS battery reset (zero parts replaced, zero cost), achieved stable 500+ FPS in Valorant through kernel-level Windows customization, and can identify rebranded GPUs in Bangladesh's second-hand market on sight.</p>
+          <p>In software development, I build cross-platform products — Electron desktop apps, Flutter Android APKs, Next.js web platforms. My flagship UltraSave covers three platforms simultaneously. Full product lifecycle: PRD, UI design, IPC bridging, monetization, Play Store distribution, AdMob integration.</p>
+          <p>In farming and agri-tech, I manage a structured urban rooftop operation — Sonali breed poultry with fermented feed systems, a self-harvesting BSF sack farm with a 35–45° engineered ramp, and multi-layer pest control using Fipronil gel, grease barriers, and DIY boric acid paste. Same engineering mindset as software. Data, protocols, zero assumptions.</p>
+          <p>Long-term goal: migrate to Australia in IT or agricultural technology. Full research completed on Australian Border Security customs regulations for PC components. The plan exists. Execution is in progress.</p>
         </div>
-        <div class="service-card reveal">
-          <div class="card-num">02</div>
-          <div class="card-icon">📍</div>
-          <div class="card-title">Google Maps & Local SEO</div>
-          <p class="card-body">Google Business Profile fully set up. Live map on site. Show up when people search nearby. Review strategy briefing included.</p>
-          <ul class="card-list">
-            <li>Google Maps embedded</li>
-            <li>Category + photos + hours</li>
-            <li>Local search visibility</li>
-          </ul>
+        <div class="profile-card reveal">
+          <div class="profile-avatar">P</div>
+          <div class="profile-name">Md. Wahidur Rahman Puson</div>
+          <div class="profile-role">IT · Apps · Agri-Tech</div>
+          <div class="profile-row"><span>FULL NAME</span><span>Md. Wahidur Rahman Puson</span></div>
+          <div class="profile-row"><span>LOCATION</span><span>Bashabo Kodomtola, Dhaka</span></div>
+          <div class="profile-row"><span>EDUCATION</span><span>BSc CSE — BIST (Ongoing)</span></div>
+          <div class="profile-row"><span>PHONE</span><span>01629944975</span></div>
+          <div class="profile-row"><span>EMAIL</span><span>Wahidur757@gmail.com</span></div>
+          <div class="profile-row"><span>HARDWARE RIG</span><span>Ryzen 5 9600X + MSI MAG B850</span></div>
+          <div class="profile-row"><span>LANGUAGES</span><span>Bengali (Native) · English (Fluent)</span></div>
+          <div class="profile-row"><span>MOBILITY</span><span>Motorcycle + Bicycle</span></div>
+          <div class="profile-row"><span>TARGET</span><span>Australia — IT / AgriTech</span></div>
+          <div class="profile-row"><span>PHILOSOPHY</span><span>Zero Hallucination · Objective Truth</span></div>
         </div>
-        <div class="service-card reveal">
-          <div class="card-num">03</div>
-          <div class="card-icon">📱</div>
-          <div class="card-title">Social Media Integration</div>
-          <p class="card-body">Facebook + Instagram properly connected to website. WhatsApp Business chat button live on day one. Unified brand across all channels.</p>
-          <ul class="card-list">
-            <li>All platforms connected</li>
-            <li>WhatsApp chat button</li>
-            <li>Consistent branding</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="card-num">04</div>
-          <div class="card-icon">🎯</div>
-          <div class="card-title">Facebook Funnel Infrastructure</div>
-          <p class="card-body">Pixel installed from day one. Lead capture landing page built. Retargeting-ready — data collecting before first ad is ever run.</p>
-          <ul class="card-list">
-            <li>Pixel + lead forms</li>
-            <li>Promotion landing page</li>
-            <li>Ready when ads start</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="card-num">05</div>
-          <div class="card-icon">📧</div>
-          <div class="card-title">Email Marketing Setup</div>
-          <p class="card-body">Professional business email + Mailchimp + list collection form + 3-email welcome sequence, automated and live at launch.</p>
-          <ul class="card-list">
-            <li>name@yourbusiness.com</li>
-            <li>Email list you own forever</li>
-            <li>Automated welcome sequence</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="card-num">06</div>
-          <div class="card-icon">💬</div>
-          <div class="card-title">WhatsApp & Telegram</div>
-          <p class="card-body">WhatsApp Business fully configured. Click-to-chat everywhere. QR codes for print. Broadcast list setup guide.</p>
-          <ul class="card-list">
-            <li>Customer number collection</li>
-            <li>QR codes for print material</li>
-            <li>Telegram channel option</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="card-num">07</div>
-          <div class="card-icon">🗃️</div>
-          <div class="card-title">Customer Data System</div>
-          <p class="card-body">Forms, QR, email signup, Google Forms backup. Client owns 100% of collected data — phone, email, name at every touchpoint.</p>
-          <ul class="card-list">
-            <li>Data belongs to client</li>
-            <li>Multi-channel collection</li>
-            <li>Ready for campaigns</li>
-          </ul>
-        </div>
-        <div class="service-card reveal">
-          <div class="card-num">08</div>
-          <div class="card-icon">🎨</div>
-          <div class="card-title">Logo & Brand Identity</div>
-          <p class="card-body">3 logo concepts. Color palette. Font kit. All file formats. Brand applied consistently across website + all social channels.</p>
-          <ul class="card-list">
-            <li>PNG + SVG + PDF delivery</li>
-            <li>Color + font guide</li>
-            <li>Social media variants</li>
-          </ul>
-        </div>
-      </div>
-      <div class="services-note reveal">
-        ⚡ NOT included: video ad production, ongoing ad management, complex SaaS.
-        I build the infrastructure — you run your marketing on top.
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-label reveal">02 — SHIPPED PRODUCTS</div>
-      <h2 class="section-title reveal">THINGS I BUILT</h2>
-      <p class="section-sub reveal">Real products. Not mockups collecting dust.</p>
-      <div class="projects-grid">
-        <div class="project-card featured reveal">
+    <!-- DOMAIN 01 — AI & HARDWARE -->
+    <section id="ai-hardware" class="domain-section">
+      <div class="section-label reveal">01 — HARDWARE &amp; AI ENGINEERING</div>
+      <h2 class="section-title reveal">SILICON &amp;<br>INTELLIGENCE</h2>
+      <p class="section-sub reveal">From bare-metal AMD Ryzen builds to autonomous AI agent pipelines. Every component chosen deliberately. Every millisecond optimized.</p>
+
+      <div class="spec-grid">
+        <div class="card spec-card reveal">
+          <div class="card-val">⚙️ AMD Ryzen 5 9600X</div>
+          <p class="card-detail">AM5 socket, Zen 5 architecture. Chosen for PCIe Gen 5 compatibility, strong single-core IPC, and thermal efficiency for Dhaka's climate. Paired with MSI MAG B850 Tomahawk.</p>
+          <div class="tags"><span class="tag tag-cyan">AM5</span><span class="tag tag-cyan">Zen 5</span><span class="tag tag-cyan">PCIe Gen 5</span></div>
+        </div>
+        <div class="card spec-card reveal">
+          <div class="card-val">🖥 MSI MAG B850 Tomahawk</div>
+          <p class="card-detail">B850 chipset, full PCIe Gen 5 x16 slot. Robust VRM for stable Ryzen operation. EXPO RAM support for bandwidth-optimized memory configs.</p>
+          <div class="tags"><span class="tag tag-cyan">B850</span><span class="tag tag-cyan">MSI</span><span class="tag tag-cyan">EXPO RAM</span></div>
+        </div>
+        <div class="card spec-card reveal">
+          <div class="card-val">💾 Transcend 960GB M.2 + 3TB WD HDD</div>
+          <p class="card-detail">NVMe M.2 for fast OS and compile cycles. 3TB WD mechanical for media archives, VM snapshots, project backups. Both listed on local marketplace for upgrade cycle.</p>
+          <div class="tags"><span class="tag tag-cyan">NVMe</span><span class="tag tag-cyan">3TB Archive</span><span class="tag tag-cyan">Dual Storage</span></div>
+        </div>
+        <div class="card spec-card reveal">
+          <div class="card-val">🎮 Valorant → 500+ FPS</div>
+          <p class="card-detail">Windows kernel-level customization + BIOS precision tuning = stable 500+ FPS in Valorant. Input latency near zero. Frame drops eliminated via DPC latency diagnosis, IRQ steering, GPU driver clean install with DDU.</p>
+          <div class="tags"><span class="tag tag-cyan">Kernel Tweak</span><span class="tag tag-cyan">DPC Fix</span><span class="tag tag-cyan">IRQ Steering</span></div>
+        </div>
+        <div class="card spec-card reveal">
+          <div class="card-val">🔍 Rebrand Detection · BD Market</div>
+          <p class="card-detail">Deep GPU architecture knowledge across NVIDIA and AMD. Identifies rebranded and relabeled cards in Bangladesh's second-hand market — including the exposed RX 580 2048SP rebranding scam — protecting clients from overpaying.</p>
+          <div class="tags"><span class="tag tag-cyan">DDU</span><span class="tag tag-cyan">Rebrand Detection</span><span class="tag tag-cyan">GPU-Z</span></div>
+        </div>
+        <div class="card spec-card reveal">
+          <div class="card-val">🚨 System Revival</div>
+          <p class="card-detail">Post-overclocking failure: CPU and DRAM warning LEDs lit, system unresponsive. Diagnosed via component isolation, revived via CMOS battery reset. Zero parts replaced. Zero cost. Full diagnostic log maintained.</p>
+          <div class="tags"><span class="tag tag-cyan">CMOS Reset</span><span class="tag tag-cyan">POST Debug</span><span class="tag tag-cyan">Zero-Cost Fix</span></div>
+        </div>
+      </div>
+
+      <div class="callout callout-cyan reveal">
+        <span class="callout-icon">⚡</span>
+        <div>
+          <div class="callout-title">The 500+ FPS Challenge — Verified Win</div>
+          <p class="callout-body">Starting from stock Windows: kernel scheduling tweaks, BIOS power state config, IRQ interrupt steering, DDU clean GPU driver install, monitor sync protocol tuning. Result: stable 500+ FPS in Valorant on Ryzen 5 9600X. Zero dips below 450 across multiple verified sessions.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-heading cyan reveal">AUTONOMOUS AI AGENT WORKFLOWS</h3>
+      <p class="section-sub reveal" style="margin-bottom: 1.5rem; margin-top: -2rem;">Not just prompting. Orchestrating.</p>
+
+      <div class="agent-grid">
+        <div class="agent-card reveal">
+          <div class="agent-name">CLINE (VS Code)</div>
+          <p class="agent-body">Autonomous coding agent inside VS Code. Generates boilerplate, refactors Electron IPC layers, scaffolds Flutter modules.</p>
+        </div>
+        <div class="agent-card reveal">
+          <div class="agent-name">OPENHANDS</div>
+          <p class="agent-body">Open-source autonomous dev agent. Multi-step tasks: plans, writes, tests, iterates. Used for PRD-to-code pipeline experiments.</p>
+        </div>
+        <div class="agent-card reveal">
+          <div class="agent-name">DEVIN (Cognition)</div>
+          <p class="agent-body">AI software engineer. Full-stack task delegation: environment setup, debugging, deployment sequencing for web projects.</p>
+        </div>
+        <div class="agent-card reveal">
+          <div class="agent-name">GOOGLE ANTI-GRAVITY</div>
+          <p class="agent-body">Google's autonomous agent ecosystem. Evaluated for workflow automation in the Neural-Nexus SaaS architecture.</p>
+        </div>
+        <div class="agent-card reveal">
+          <div class="agent-name">CURSOR IDE</div>
+          <p class="agent-body">AI-first IDE, primary development environment. Composer mode for multi-file edits across Electron, Flutter, and Next.js.</p>
+        </div>
+        <div class="agent-card reveal">
+          <div class="agent-name">LLM PROMPT ENGINEERING</div>
+          <p class="agent-body">Advanced: structured outputs, JSON generation, multi-step chains, persona consistency. Zero hallucination methodology.</p>
+        </div>
+        <div class="agent-card reveal">
+          <div class="agent-name">ELEVENLABS AI VOICE</div>
+          <p class="agent-body">Bengali AI voiceover for YouTube. Custom voice config, emotion modulation, batch generation for faceless video pipeline.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-gold reveal">
+        <span class="callout-icon">🔩</span>
+        <div>
+          <div class="callout-title">15+ Custom PC Builds — Dhaka Market</div>
+          <p class="callout-body">Hardware consulting and custom PC builds. Components sourced from Elephant Road and New Market, authenticity verified, full assembly + OS deployment (Windows 11 and Linux). Motorcycle mobility enables rapid field response across Bashabo, Kodomtola, surrounding Dhaka areas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAIN 02 — APP DEV -->
+    <section id="app-dev" class="domain-section violet" style="background: var(--bg2)">
+      <div class="section-label reveal">02 — APP &amp; WEBSITE DEVELOPMENT</div>
+      <h2 class="section-title reveal">SHIPPED.<br>NOT MOCKUPS.</h2>
+      <p class="section-sub reveal">Real products. Real users. Real monetization. Full lifecycle: PRD → design → build → deploy → maintain.</p>
+
+      <div class="projects-grid violet">
+        <div class="project-card card featured reveal">
           <span class="badge badge-active">🚀 ACTIVE · FLAGSHIP</span>
-          <div class="project-title">UltraSave — 3-Platform Ecosystem</div>
-          <p class="project-desc">A complete social media video/audio downloader across three platforms. Windows desktop app (Electron + React + Vite, bundled yt-dlp + ffmpeg), Android APK (Flutter + Dart, AdMob monetization, halal ad filters), and a Next.js landing & distribution website. Full IPC bridge implemented. 1000+ sites supported via yt-dlp. Dark UI #0f0f13 accent #6c63ff across all three platforms.</p>
+          <div class="project-title">UltraSave — Three-Platform Ecosystem</div>
           <div class="platform-pills">
-            <span class="platform-pill">Windows EXE</span>
-            <span class="platform-pill">Android APK</span>
-            <span class="platform-pill">Next.js Site</span>
+            <span class="platform-pill">🖥 Windows EXE</span>
+            <span class="platform-pill">📱 Android APK</span>
+            <span class="platform-pill">🌐 Next.js Site</span>
           </div>
+          <p class="project-desc">A complete social media video/audio downloader across three platforms simultaneously. Windows desktop app: Electron + React + Vite, bundled yt-dlp + ffmpeg, supports 1000+ sites. Android APK: Flutter + Dart, AdMob monetization with halal ad filters. Next.js landing and distribution site. Full IPC bridge across main and renderer processes. Unified brand: dark #0f0f13 background, #6c63ff accent across all three products.</p>
           <div class="tags">
-            <span class="tag">Electron</span>
-            <span class="tag">React+Vite</span>
-            <span class="tag">Flutter</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">yt-dlp</span>
-            <span class="tag">ffmpeg</span>
-            <span class="tag">AdMob</span>
-            <span class="tag">AdSense</span>
+            <span class="tag tag-violet">Electron</span><span class="tag tag-violet">React+Vite</span><span class="tag tag-violet">Flutter</span><span class="tag tag-violet">Next.js</span><span class="tag tag-violet">yt-dlp</span><span class="tag tag-violet">ffmpeg</span><span class="tag tag-violet">AdMob</span><span class="tag tag-violet">AdSense</span><span class="tag tag-violet">IPC Bridge</span>
           </div>
         </div>
-        <div class="project-card reveal">
-          <span class="badge badge-ongoing">📺 ONGOING · 2022–PRESENT</span>
+        <div class="project-card card reveal">
+          <span class="badge badge-ongoing">📺 ONGOING</span>
           <div class="project-title">Bengali Tech YouTube Channel</div>
-          <p class="project-desc">Faceless Bengali-language tech channel for Bangladeshi PC builders, gamers, and AI learners. Full production pipeline: script → ElevenLabs AI voiceover → Canva visuals → DaVinci Resolve edit → OBS → publish. Notable: exposed RX 580 2048SP GPU rebranding scam in the Bangladeshi second-hand market.</p>
+          <p class="project-desc">Faceless Bengali-language tech channel for PC builders, gamers, AI learners. Full pipeline: script → ElevenLabs AI Bengali voiceover → Canva visuals → OBS recording → DaVinci Resolve edit + color → upload with SEO metadata. Notable: exposed RX 580 2048SP rebranding scam in BD GPU market.</p>
           <div class="tags">
-            <span class="tag">ElevenLabs</span>
-            <span class="tag">Canva</span>
-            <span class="tag">DaVinci Resolve</span>
-            <span class="tag">OBS</span>
-            <span class="tag">Bengali SEO</span>
+            <span class="tag tag-violet">ElevenLabs</span><span class="tag tag-violet">Canva</span><span class="tag tag-violet">DaVinci Resolve</span><span class="tag tag-violet">OBS</span><span class="tag tag-violet">Bengali SEO</span><span class="tag tag-violet">Faceless Format</span>
           </div>
         </div>
-        <div class="project-card reveal">
-          <span class="badge badge-shipped">◆ SHIPPED · CLIENT</span>
+        <div class="project-card card reveal">
+          <span class="badge badge-client">◆ SHIPPED · CLIENT</span>
           <div class="project-title">Dental Point — Dr. Jerin</div>
-          <p class="project-desc">Production-grade dental appointment booking system. WhatsApp Cloud API integration, Supabase backend, automated cron worker, admin dashboard. Full deployment on Vercel.</p>
+          <p class="project-desc">Production dental appointment booking system. WhatsApp Cloud API for instant notifications, Supabase PostgreSQL backend, automated cron worker for reminders, full admin dashboard. Deployed on Vercel with custom domain.</p>
           <div class="tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">WhatsApp API</span>
-            <span class="tag">Vercel</span>
+            <span class="tag tag-violet">Next.js</span><span class="tag tag-violet">Supabase</span><span class="tag tag-violet">WhatsApp API</span><span class="tag tag-violet">Cron Worker</span><span class="tag tag-violet">Vercel</span>
           </div>
         </div>
-        <div class="project-card reveal">
-          <span class="badge badge-shipped">◆ SHIPPED · CLIENT</span>
+        <div class="project-card card reveal">
+          <span class="badge badge-client">◆ SHIPPED · CLIENT</span>
           <div class="project-title">Jennah Boutique — E-commerce SPA</div>
-          <p class="project-desc">Pixel-perfect luxury e-commerce single-page application. Full mega-menu, product pages, functional cart logic, responsive layouts — built as a single portable HTML file for client proposal demo.</p>
+          <p class="project-desc">Luxury e-commerce single-page application. Full mega-menu, product detail pages, functional cart logic with quantity management, complete responsive layouts. Delivered as a single portable HTML file for client proposal — the entire storefront in one file.</p>
           <div class="tags">
-            <span class="tag">HTML/CSS/JS</span>
-            <span class="tag">SPA</span>
-            <span class="tag">E-commerce</span>
+            <span class="tag tag-violet">HTML/CSS/JS</span><span class="tag tag-violet">SPA</span><span class="tag tag-violet">E-commerce</span><span class="tag tag-violet">Mega-menu</span><span class="tag tag-violet">Cart Logic</span>
           </div>
         </div>
-        <div class="project-card reveal">
+        <div class="project-card card reveal">
           <span class="badge badge-concept">💡 CONCEPT · IN PROGRESS</span>
           <div class="project-title">Project Neural-Nexus</div>
-          <p class="project-desc">AI-driven Micro-SaaS and affiliate ecosystem — 'Commission Empire' model. Multi-AI agents (Claude, Cursor, OpenHands, Cline, Devin) coordinated for code generation, marketing automation, and passive affiliate revenue stacking.</p>
+          <p class="project-desc">AI-driven Micro-SaaS and affiliate 'Commission Empire'. Multiple autonomous agents (Claude, Cursor, OpenHands, Cline, Devin) coordinated for code generation, content creation, marketing automation. Each SaaS node earns independently. Target: ৳10,000+/month passive from three coordinated nodes.</p>
           <div class="tags">
-            <span class="tag">AI/LLM</span>
-            <span class="tag">Micro-SaaS</span>
-            <span class="tag">Affiliate</span>
-            <span class="tag">Automation</span>
+            <span class="tag tag-violet">AI/LLM</span><span class="tag tag-violet">Micro-SaaS</span><span class="tag tag-violet">Affiliate</span><span class="tag tag-violet">Automation</span><span class="tag tag-violet">Passive Income</span>
           </div>
         </div>
-        <div class="project-card reveal">
+        <div class="project-card card reveal">
           <span class="badge badge-live">🌿 LIVE · NETLIFY</span>
-          <div class="project-title">Natural Treatment Blog</div>
-          <p class="project-desc">Holistic health authority blog on Netlify. Built for AEO (Answer Engine Optimization) — AI search engines like Perplexity and ChatGPT pull content directly. Passive income via affiliate links + AdSense.</p>
+          <div class="project-title">Nature's Intimacy — Authority Blog</div>
+          <p class="project-desc">Holistic health authority blog with AEO (Answer Engine Optimization) architecture — AI search engines like Perplexity and ChatGPT pull content directly as structured answers. Passive income via affiliate links and AdSense. Targets high-value herbal/biohacking queries.</p>
           <div class="tags">
-            <span class="tag">Netlify</span>
-            <span class="tag">SEO</span>
-            <span class="tag">AEO</span>
-            <span class="tag">AdSense</span>
-            <span class="tag">Affiliate</span>
+            <span class="tag tag-violet">Netlify</span><span class="tag tag-violet">SEO</span><span class="tag tag-violet">AEO</span><span class="tag tag-violet">AdSense</span><span class="tag tag-violet">Affiliate Marketing</span>
           </div>
+        </div>
+        <div class="project-card card reveal">
+          <span class="badge badge-research">🔬 RESEARCH · PIVOTED</span>
+          <div class="project-title">SecureNexus AI</div>
+          <p class="project-desc">Decentralized identity vault concept. Full PRD feasibility study completed. Core finding: user adoption friction prohibitively high for BD market. Correctly identified and pivoted toward centralized-but-private identity management. Research feeds into Neural-Nexus architecture.</p>
+          <div class="tags">
+            <span class="tag tag-violet">Identity</span><span class="tag tag-violet">Decentralized</span><span class="tag tag-violet">PRD</span><span class="tag tag-violet">Feasibility Study</span><span class="tag tag-violet">Pivoted</span>
+          </div>
+        </div>
+        <div class="project-card card reveal">
+          <span class="badge badge-ongoing">⚡ ONGOING · SERVICE</span>
+          <div class="project-title">15+ Custom Builds — Dhaka Clients</div>
+          <div class="mini-stat-row">
+            <span class="mini-stat">15+ Builds</span>
+            <span class="mini-stat">AMD Specialist</span>
+            <span class="mini-stat">Win/Linux OS</span>
+          </div>
+          <p class="project-desc">Client-specific custom PC builds from ৳30K gaming rigs to ৳1.5L+ professional workstations. Full service: sourcing (Elephant Road/New Market), authenticity verification, thermal paste, cable management, OS deployment (Windows 11 or Linux), driver install, benchmark verification.</p>
+          <div class="tags">
+            <span class="tag tag-violet">AMD Ryzen</span><span class="tag tag-violet">Intel</span><span class="tag tag-violet">GPU Sourcing</span><span class="tag tag-violet">Windows 11</span><span class="tag tag-violet">Linux</span><span class="tag tag-violet">Field Service</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAIN 03 — FARMING -->
+    <section id="farming" class="domain-section green">
+      <div class="section-label reveal">03 — FARMING &amp; AGRI-TECH</div>
+      <h2 class="section-title reveal">GROWN FROM<br>SOIL.</h2>
+      <p class="section-sub reveal">Most people separate tech from farming. Every system on this rooftop is engineered — cage dimensions, fermentation ratios, pest control chemistry.</p>
+
+      <div class="farm-intro reveal">
+        <div>
+          <p>Operating from Bashabo rooftop — a structured urban farm combining Sonali breed poultry management, a self-harvesting BSF larvae sack farm, and a zero-waste kitchen scrap conversion system. Goal: live protein feed at near-zero cost while converting kitchen waste into premium fertilizer.</p>
+          <p style="margin-top: 1rem;">Every decision is data-driven. Feed fermentation ratios calculated. Cage dimensions specified to the half-foot. BSF ramp angles engineered for optimal larval migration (35–45°). Pest control uses verified chemical agents with documented kill mechanisms.</p>
+          <p style="margin-top: 1rem;">Also includes practical woodcrafting — Chambul timber selected for Dhaka humidity resistance, CFT calculation for lumber procurement, frame and shelf construction using traditional hand tools.</p>
+        </div>
+        <div class="farm-stats">
+          <div class="farm-stats-title">FARM QUICK STATS</div>
+          <div class="farm-row"><span>POULTRY BREED</span><span>Sonali Classic (RIR × Fayoumi)</span></div>
+          <div class="farm-row"><span>PRIMARY FEED</span><span>Fermented + BSF Larvae</span></div>
+          <div class="farm-row"><span>CAGE UNITS</span><span>3 Active + 1 Store Room</span></div>
+          <div class="farm-row"><span>BSF METHOD</span><span>Self-Harvesting Sack System</span></div>
+          <div class="farm-row"><span>BSF CYCLE TIME</span><span>14–21 Days</span></div>
+          <div class="farm-row"><span>LEACHATE DILUTION</span><span>1:10 Ratio (Mandatory)</span></div>
+          <div class="farm-row"><span>RAMP ANGLE (BSF)</span><span>35° – 45° Engineered</span></div>
+          <div class="farm-row"><span>PEST PROTOCOL</span><span>Fipronil Gel + Grease Barrier</span></div>
+          <div class="farm-row"><span>SUPPLEMENT</span><span>Neobion (B-complex for duckling)</span></div>
+          <div class="farm-row"><span>WOOD OF CHOICE</span><span>Chambul (Humidity Resistant)</span></div>
+          <div class="farm-row"><span>LOCATION</span><span>Rooftop, Bashabo, Dhaka</span></div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading reveal">CAGE INFRASTRUCTURE — EXACT SPECS</h3>
+      <div class="reveal" style="overflow-x: auto;">
+        <table class="farm-table">
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Dimensions (L×W)</th>
+              <th>Primary Use</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cage 1 — Medium</td>
+              <td>2.5 ft × 3.5 ft</td>
+              <td>Quail/poultry trial</td>
+              <td>8–12 quail or juvenile Sonali; good airflow</td>
+            </tr>
+            <tr>
+              <td>Cage 2 — Large Main</td>
+              <td>4 ft × 6 ft</td>
+              <td>Adult poultry housing</td>
+              <td>Sonali main unit; deep litter; biosecurity enforced</td>
+            </tr>
+            <tr>
+              <td>Cage 3 — Small Lab</td>
+              <td>2.5 ft × 2.5 ft</td>
+              <td>Larvae/beetle isolation</td>
+              <td>BSF staging; Superworm cup isolation; test batches</td>
+            </tr>
+            <tr>
+              <td>Store Room</td>
+              <td>Separate room</td>
+              <td>Feed &amp; supply ONLY</td>
+              <td>STRICT: No other use. Fermented feed, Neobion, pest agents stored here</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="spec-grid" style="margin-top: 2rem;">
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🐔</div>
+          <div class="fc-title">SONALI CLASSIC — BREED SELECTION</div>
+          <p class="fc-body">Rhode Island Red × Fayoumi cross. Selected for BD climate resilience, dual-purpose output (meat + egg), lower feed conversion ratio, heat tolerance. Outperforms broilers on rooftops due to foraging temperament and disease resistance to local pathogens.</p>
+          <div class="tags"><span class="tag tag-green">RIR × Fayoumi</span><span class="tag tag-green">Climate Adapted</span><span class="tag tag-green">Dual Purpose</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🍚</div>
+          <div class="fc-title">FERMENTED FEED — WINNER PROTOCOL</div>
+          <p class="fc-body">Kitchen waste + vegetable peelings + rice + trace yeast/molasses → sealed airtight bucket → 2–3 days anaerobic fermentation. Pathogenic bacteria eliminated. Nutrient density ~3× increased. Feed self-preserved. Single-daily-visit constraint makes this the ONLY viable wet feed method.</p>
+          <div class="tags"><span class="tag tag-green">Anaerobic</span><span class="tag tag-green">Yeast + Molasses</span><span class="tag tag-green">Zero-Waste</span><span class="tag tag-green">3× Nutrients</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">⚠️</div>
+          <div class="fc-title">WET FEED RISK — ELIMINATED</div>
+          <p class="fc-body">Open wet feed becomes dangerous within hours: bacterial + fungal invasion, fly egg-laying (maggot infestation), putrefaction causing duckling diarrhea. Open wet food is categorically prohibited. Only fermented or dry feed during single daily rounds.</p>
+          <div class="tags"><span class="tag tag-green">Fungal Risk</span><span class="tag tag-green">Single Visit Protocol</span><span class="tag tag-green">Mandatory Rule</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🐦</div>
+          <div class="fc-title">QUAIL DIET PROTOCOL</div>
+          <p class="fc-body">Quail bills too small for whole seeds. Protocol: broken wheat (গমের খুদ) or rice grits mixed with BSF larvae. Fermented grain base + fresh larvae = complete protein + carbohydrate. No whole seeds. BSF larvae fed whole — quail handle them without preparation.</p>
+          <div class="tags"><span class="tag tag-green">Broken Wheat</span><span class="tag tag-green">BSF Mix</span><span class="tag tag-green">Quail-Specific</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🕊️</div>
+          <div class="fc-title">PIGEON — GRANIVORE ONLY</div>
+          <p class="fc-body">Pigeons are strict granivores. They naturally avoid insects and larvae. Feeding BSF larvae to pigeons is counterproductive. Feed: whole grain only — wheat, sorghum, millet, paddy. Zero larvae. Zero wet feed.</p>
+          <div class="tags"><span class="tag tag-green">Whole Grain Only</span><span class="tag tag-green">No Larvae</span><span class="tag tag-green">Species Specific</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">💊</div>
+          <div class="fc-title">NEOBION SUPPLEMENT PROGRAM</div>
+          <p class="fc-body">Neobion tablets (B-complex vitamins) for duckling growth support during high-growth phase (weeks 1–3). Monitored per batch: growth rate, activity, plumage quality, feed-to-weight conversion ratio.</p>
+          <div class="tags"><span class="tag tag-green">Duckling</span><span class="tag tag-green">B-Complex</span><span class="tag tag-green">Growth Protocol</span></div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading reveal">BSF LARVAE SACK FARMING — FULL ENGINEERING SPEC</h3>
+      <div class="bsf-flow reveal">
+        <div class="bsf-step">
+          <div class="bsf-num">STEP 01</div>
+          <div class="bsf-title">SACK SETUP</div>
+          <p class="bsf-body">10–20kg jute sack (চটের বস্তা). Position UPRIGHT (খাড়া) — never sideways. Pre-pupa instinctively crawl upward in darkness. Horizontal placement destroys the harvest mechanic entirely.</p>
+        </div>
+        <div class="bsf-step">
+          <div class="bsf-num">STEP 02</div>
+          <div class="bsf-title">SUBSTRATE LOADING</div>
+          <p class="bsf-body">Any kitchen waste including meat and citrus (unlike earthworms which reject these). Fill to 60–70% capacity. Do not pack tight — airflow channels needed. Moisture: damp, no dripping (squeeze test).</p>
+        </div>
+        <div class="bsf-step">
+          <div class="bsf-num">STEP 03</div>
+          <div class="bsf-title">THE RAMP</div>
+          <p class="bsf-body">Jute fabric strip or rough cardboard at 35–45° angle from substrate, up through 1.5–2cm exit hole at sack top. Smooth plastic CANNOT be used — larvae cannot grip it. Rough jute surface is required.</p>
+        </div>
+        <div class="bsf-step">
+          <div class="bsf-num">STEP 04</div>
+          <div class="bsf-title">COLLECTION BOTTLE</div>
+          <p class="bsf-body">1.5–2L plastic bottle mouth at ramp exit. Wrapped fully in black cloth — larvae are photophobic and race toward the dark space. Entry hole 1.5–2cm prevents birds from accessing with beak.</p>
+        </div>
+        <div class="bsf-step">
+          <div class="bsf-num">STEP 05</div>
+          <div class="bsf-title">LEACHATE HANDLING</div>
+          <p class="bsf-body">Raw BSF leachate: highly acidic + ammonia-rich. Direct use kills earthworms and damages roots. MANDATORY: dilute 1:10 ratio (1 part leachate + 10 parts water). Diluted = premium liquid fertilizer.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-heading reveal">LARVAE SYSTEM COMPARISON — BSF vs EARTHWORM vs BEETLE</h3>
+      <div class="reveal" style="overflow-x: auto;">
+        <table class="farm-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>BSF Larvae</th>
+              <th>Earthworm</th>
+              <th>Mealworm/Superworm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Growth Speed</td>
+              <td class="cell-best">14–21 days</td>
+              <td>2–3 months</td>
+              <td>8–10 weeks</td>
+            </tr>
+            <tr>
+              <td>Main Output</td>
+              <td class="cell-best">High-protein + fat larvae</td>
+              <td>Premium vermicompost</td>
+              <td>Fat-rich snack</td>
+            </tr>
+            <tr>
+              <td>Self-Harvest?</td>
+              <td class="cell-best">YES (ramp + dark bottle)</td>
+              <td class="cell-bad">NO (manual sieve)</td>
+              <td class="cell-bad">NO (manual cup)</td>
+            </tr>
+            <tr>
+              <td>Accepts Meat?</td>
+              <td class="cell-best">YES — anything</td>
+              <td class="cell-bad">NO — plants only</td>
+              <td class="cell-bad">NO — dry grain only</td>
+            </tr>
+            <tr>
+              <td>Heat Tolerance</td>
+              <td class="cell-best">EXCELLENT (30–35°C+)</td>
+              <td class="cell-bad">POOR — dies in heat</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>Operating Cost</td>
+              <td class="cell-best">Near-zero (kitchen waste)</td>
+              <td>Low (bedding)</td>
+              <td>Low-medium (grain)</td>
+            </tr>
+            <tr>
+              <td>Protein Content</td>
+              <td>42% protein</td>
+              <td class="cell-best">60–70% protein</td>
+              <td>50% protein</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub-heading reveal">PEST CONTROL — VERIFIED MECHANICAL &amp; CHEMICAL SOLUTIONS</h3>
+      <div class="spec-grid">
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🐀</div>
+          <div class="fc-title">GREASE/MOBIL BARRIER (Rats)</div>
+          <p class="fc-body">Apply heavy grease or recycled motor oil on all four stand legs. Rats cannot grip the slick surface — climbing is physically impossible. Near-zero cost (recycled oil). No chemicals near food area.</p>
+          <div class="tags"><span class="tag tag-green">Mechanical</span><span class="tag tag-green">Near-Zero Cost</span><span class="tag tag-green">Zero Chemical Near Food</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">💧</div>
+          <div class="fc-title">WATER MOAT SYSTEM</div>
+          <p class="fc-body">Stand legs inside small water-filled containers. Rats avoid crossing water obstacles. Passive humidity moderator as side benefit. Maintenance: weekly refill only.</p>
+          <div class="tags"><span class="tag tag-green">Passive</span><span class="tag tag-green">Rat + Bird</span><span class="tag tag-green">Weekly Maintenance</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🐦</div>
+          <div class="fc-title">BIRD — ISLAND EFFECT</div>
+          <p class="fc-body">BSF bottles and larvae bins surrounded by water bowls. Birds cannot land on water surface. No nets or wires required. Fully passive — no daily interaction needed.</p>
+          <div class="tags"><span class="tag tag-green">No-Net</span><span class="tag tag-green">Island Physics</span><span class="tag tag-green">Zero Cost</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🪳</div>
+          <div class="fc-title">FIPRONIL GEL BAIT (Cockroach)</div>
+          <p class="fc-body">Fipronil Gel applied via syringe in micro-dots at cage corners. Cockroaches consume → return to colony → die → colony mates eat corpse → cascade colony kill. Not individual kill — colony elimination.</p>
+          <div class="tags"><span class="tag tag-green">Fipronil</span><span class="tag tag-green">Colony Kill</span><span class="tag tag-green">Syringe</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">⚗️</div>
+          <div class="fc-title">DIY BORIC ACID PASTE</div>
+          <p class="fc-body">1 tsp boric acid + 1 tsp condensed milk + flour + water → small balls. Under feed drums. Cockroach eats → dies in burrow → cascade kill through cannibalism. Total cost: under ৳50.</p>
+          <div class="tags"><span class="tag tag-green">DIY</span><span class="tag tag-green">Cascade Kill</span><span class="tag tag-green">Under ৳50</span></div>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🪲</div>
+          <div class="fc-title">SUPERWORM CUP ISOLATION</div>
+          <p class="fc-body">Superworms cannot pupate in groups — hormonal suppression prevents metamorphosis. Individual plastic cup → forced isolation → stress triggers pupation. Smooth walls prevent escape. Prevents cannibalism.</p>
+          <div class="tags"><span class="tag tag-green">Superworm</span><span class="tag tag-green">Pupation Protocol</span><span class="tag tag-green">Isolation</span></div>
+        </div>
+      </div>
+
+      <div class="spec-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 2rem;">
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🪵</div>
+          <div class="fc-title">CHAMBUL WOOD</div>
+          <p class="fc-body">Humidity resistance, selected for Dhaka monsoon and year-round humidity. Resists warping and fungal rot. Superior to cheaper softwoods in Dhaka's timber markets.</p>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">📐</div>
+          <div class="fc-title">CFT CALCULATION</div>
+          <p class="fc-body">Cubic feet calculation for timber procurement. Prevents over/under-buying, enables price negotiation with Dhaka yard sellers.</p>
+        </div>
+        <div class="farm-card card reveal">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem">🔨</div>
+          <div class="fc-title">FRAME CONSTRUCTION</div>
+          <p class="fc-body">Cage frames, shelves, storage structures using hand tools only (chisel, saw, mallet, tape). No power tools.</p>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-label reveal">03 — TECH STACK</div>
-      <h2 class="section-title reveal">SKILLS & TOOLS</h2>
+    <section id="skills" style="background: var(--bg2)">
+      <div class="section-label reveal">04 — COMPLETE SKILL MAP</div>
+      <h2 class="section-title reveal">ALL SKILLS.<br>NO FILLER.</h2>
+      <p class="section-sub reveal">Every verified skill across all three domains.</p>
       <div class="ticker-wrap reveal">
         <div class="ticker-track">
-          <span>React · Next.js · Flutter · Dart · Electron · Vite · Firebase · Firestore · WordPress · yt-dlp · ffmpeg · AdMob · AdSense · DaVinci Resolve · OBS · ElevenLabs · Claude AI · Cursor · OpenHands · AMD Ryzen · BIOS Tuning · DDU · GPU-Z · Git · Python · VS Code ·&nbsp;&nbsp;&nbsp;</span>
-          <span>React · Next.js · Flutter · Dart · Electron · Vite · Firebase · Firestore · WordPress · yt-dlp · ffmpeg · AdMob · AdSense · DaVinci Resolve · OBS · ElevenLabs · Claude AI · Cursor · OpenHands · AMD Ryzen · BIOS Tuning · DDU · GPU-Z · Git · Python · VS Code ·&nbsp;&nbsp;&nbsp;</span>
+          <span>React · Next.js · Flutter · Dart · Electron · Vite · Firebase · WordPress · yt-dlp · ffmpeg · AdMob · AdSense · DaVinci Resolve · HitFilm · OBS · ElevenLabs · Claude AI · Cursor · OpenHands · Cline · Devin · AMD Ryzen · MSI MAG B850 · BIOS Tuning · DDU · GPU-Z · Git · Python · BSF Farming · Fermented Feed · Sonali Poultry · Fipronil Protocol · Chambul Wood ·&nbsp;&nbsp;&nbsp;</span>
+          <span>React · Next.js · Flutter · Dart · Electron · Vite · Firebase · WordPress · yt-dlp · ffmpeg · AdMob · AdSense · DaVinci Resolve · HitFilm · OBS · ElevenLabs · Claude AI · Cursor · OpenHands · Cline · Devin · AMD Ryzen · MSI MAG B850 · BIOS Tuning · DDU · GPU-Z · Git · Python · BSF Farming · Fermented Feed · Sonali Poultry · Fipronil Protocol · Chambul Wood ·&nbsp;&nbsp;&nbsp;</span>
         </div>
       </div>
       <div class="skills-grid">
-        <div class="skill-card reveal">
-          <div class="skill-cat">WEB DEV</div>
-          <div class="skill-name">Web Development</div>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Next.js</span><span class="tag">HTML/CSS</span><span class="tag">WordPress</span>
+        <div class="skill-card card reveal">
+          <div class="skill-cat" style="color:var(--accent)">🤖 AI &amp; MACHINE LEARNING</div>
+          <div class="skill-item"><span class="skill-item-name">Autonomous Agents (Cline/Devin/OpenHands)</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">LLM Prompt Engineering</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">ElevenLabs Voice Synthesis</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">AI Workflow Design</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">AEO Optimization</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">AI-Assisted Content Production</span><span class="skill-level level-advanced">Advanced</span></div>
+        </div>
+        <div class="skill-card card reveal">
+          <div class="skill-cat" style="color:var(--accent)">⚙️ HARDWARE &amp; SYSTEMS</div>
+          <div class="skill-item"><span class="skill-item-name">AMD Ryzen Platform (AM5)</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-item-name">Custom PC Assembly</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-item-name">Windows Kernel Optimization</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">BIOS / UEFI Configuration</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">GPU Diagnostics &amp; DDU</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Hardware Crash Recovery</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">OS Deployment (Win/Linux)</span><span class="skill-level level-proficient">Proficient</span></div>
+        </div>
+        <div class="skill-card card reveal">
+          <div class="skill-cat" style="color:var(--violet)">💻 SOFTWARE DEVELOPMENT</div>
+          <div class="skill-item"><span class="skill-item-name">React + Vite</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Electron (Desktop)</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Flutter + Dart (Android)</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Next.js (SSR/SSG)</span><span class="skill-level level-working">Working</span></div>
+          <div class="skill-item"><span class="skill-item-name">Firebase (Auth, Firestore)</span><span class="skill-level level-working">Working</span></div>
+          <div class="skill-item"><span class="skill-item-name">WordPress + WooCommerce</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">AdSense &amp; AdMob</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">PRD Writing</span><span class="skill-level level-advanced">Advanced</span></div>
+        </div>
+        <div class="skill-card card reveal">
+          <div class="skill-cat" style="color:var(--red)">🎬 VIDEO &amp; CONTENT</div>
+          <div class="skill-item"><span class="skill-item-name">DaVinci Resolve (Edit+Color)</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">HitFilm Express</span><span class="skill-level level-working">Working</span></div>
+          <div class="skill-item"><span class="skill-item-name">OBS Studio</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Canva (Motion Graphics)</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">YouTube SEO (Bengali)</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Faceless Production</span><span class="skill-level level-advanced">Advanced</span></div>
+        </div>
+        <div class="skill-card card reveal">
+          <div class="skill-cat" style="color:var(--green)">🌾 AGRI-TECH &amp; FARMING</div>
+          <div class="skill-item"><span class="skill-item-name">BSF Larvae Sack Farming</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">Fermented Feed Prep</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">Poultry Management (Sonali)</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Biosecurity Protocols</span><span class="skill-level level-proficient">Proficient</span></div>
+          <div class="skill-item"><span class="skill-item-name">Pest Control (Chem+Mech)</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">Woodcrafting (Chambul+CFT)</span><span class="skill-level level-proficient">Proficient</span></div>
+        </div>
+        <div class="skill-card card reveal">
+          <div class="skill-cat" style="color:var(--gold)">🌐 BUSINESS &amp; COMM</div>
+          <div class="skill-item"><span class="skill-item-name">English (Written + Verbal)</span><span class="skill-level level-fluent">Fluent</span></div>
+          <div class="skill-item"><span class="skill-item-name">Bengali</span><span class="skill-level level-fluent">Native</span></div>
+          <div class="skill-item"><span class="skill-item-name">IT Consulting (Hardware)</span><span class="skill-level level-expert">Expert</span></div>
+          <div class="skill-item"><span class="skill-item-name">Google Workspace</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">Technical Documentation</span><span class="skill-level level-advanced">Advanced</span></div>
+          <div class="skill-item"><span class="skill-item-name">Motorcycle + Bicycle</span><span class="skill-level level-fluent">Licensed</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-label reveal">05 — EXPERIENCE</div>
+      <h2 class="section-title reveal">BACKGROUND &amp;<br>TIMELINE</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="tl-dot" style="background:var(--gold)"></div>
+          <div></div>
+          <div>
+            <div class="tl-role">B.Sc. Computer Science &amp; Engineering</div>
+            <div class="tl-where">BIST — BANGLADESH INSTITUTE OF SCIENCE &amp; TECHNOLOGY</div>
+            <div class="tl-body">Undergraduate CSE at BIST, Dhaka. Academic fundamentals in data structures, algorithms, digital systems, and software engineering applied directly to real-world product development running in parallel.</div>
+            <div class="tags" style="margin-top:0.8rem"><span class="tag tag-gold">CSE</span><span class="tag tag-gold">BIST</span><span class="tag tag-gold">Ongoing</span><span class="tag tag-gold">Applied Learning</span></div>
           </div>
         </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">MOBILE</div>
-          <div class="skill-name">Android Apps</div>
-          <div class="tags">
-            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">AdMob</span><span class="tag">Play Store</span>
+        <div class="timeline-item reveal">
+          <div class="tl-dot" style="background:var(--accent)"></div>
+          <div></div>
+          <div>
+            <div class="tl-role">Independent IT Specialist &amp; Hardware Consultant</div>
+            <div class="tl-where">FREELANCE · DHAKA, BANGLADESH</div>
+            <ul class="tl-body">
+              <li>15+ custom PC builds from ৳30K gaming rigs to ৳1.5L+ professional workstations</li>
+              <li>On-call troubleshooting, OS deployment (Windows 11/Linux), post-build optimization</li>
+              <li>AMD Ryzen AM5 specialty — 9600X + MSI MAG B850, stable 500+ FPS Valorant pipeline</li>
+              <li>GPU authenticity verification — identifies rebranded cards in BD second-hand market</li>
+              <li>Windows kernel-level gaming optimization: DPC latency, IRQ steering, BIOS tuning</li>
+              <li>Motorcycle-enabled rapid field response across Bashabo and surrounding Dhaka areas</li>
+            </ul>
           </div>
         </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">DESKTOP</div>
-          <div class="skill-name">Windows Apps</div>
-          <div class="tags">
-            <span class="tag">Electron</span><span class="tag">Node.js</span><span class="tag">IPC Bridge</span>
+        <div class="timeline-item reveal">
+          <div class="tl-dot" style="background:var(--violet)"></div>
+          <div></div>
+          <div>
+            <div class="tl-role">Cross-Platform App Developer</div>
+            <div class="tl-where">PERSONAL PROJECTS · REMOTE</div>
+            <ul class="tl-body">
+              <li>Built and shipped UltraSave ecosystem — Windows EXE, Android APK, Next.js site</li>
+              <li>Full product lifecycle — PRD, UI design, IPC architecture, AdMob, Play Store</li>
+              <li>Client work: Dental Point (WhatsApp API + Supabase), Jennah Boutique (E-commerce SPA)</li>
+              <li>Nature's Intimacy blog on Netlify — AEO/SEO-first for AI search visibility</li>
+              <li>SecureNexus AI PRD — identified BD market adoption barriers, correctly pivoted</li>
+              <li>AI agents (Cline, OpenHands, Devin) integrated into workflows</li>
+            </ul>
           </div>
         </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">BACKEND</div>
-          <div class="skill-name">Cloud & DB</div>
-          <div class="tags">
-            <span class="tag">Firebase</span><span class="tag">Firestore</span><span class="tag">REST API</span>
+        <div class="timeline-item reveal">
+          <div class="tl-dot" style="background:var(--red)"></div>
+          <div></div>
+          <div>
+            <div class="tl-role">Bengali Tech YouTuber &amp; Content Creator</div>
+            <div class="tl-where">YOUTUBE · FACELESS FORMAT</div>
+            <ul class="tl-body">
+              <li>Bengali channel for PC builders, gamers, AI learners in Bangladesh</li>
+              <li>Full pipeline: script → ElevenLabs → Canva → OBS → DaVinci → upload</li>
+              <li>Exposed RX 580 2048SP GPU rebranding scam in BD second-hand market</li>
+              <li>Faceless format — scalable, AI-assisted, no on-camera dependency</li>
+            </ul>
           </div>
         </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">VIDEO</div>
-          <div class="skill-name">Content Production</div>
-          <div class="tags">
-            <span class="tag">DaVinci Resolve</span><span class="tag">HitFilm</span><span class="tag">OBS</span><span class="tag">CapCut</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">AI</div>
-          <div class="skill-name">AI Workflow</div>
-          <div class="tags">
-            <span class="tag">Claude</span><span class="tag">Cursor</span><span class="tag">OpenHands</span><span class="tag">Cline</span><span class="tag">ElevenLabs</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">HARDWARE</div>
-          <div class="skill-name">PC Engineering</div>
-          <div class="tags">
-            <span class="tag">AMD Ryzen</span><span class="tag">MSI</span><span class="tag">BIOS Tuning</span><span class="tag">DDU</span><span class="tag">GPU-Z</span>
-          </div>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-cat">TOOLS</div>
-          <div class="skill-name">Dev Environment</div>
-          <div class="tags">
-            <span class="tag">VS Code</span><span class="tag">PowerShell</span><span class="tag">Git</span><span class="tag">npm</span><span class="tag">Python</span>
+        <div class="timeline-item reveal">
+          <div class="tl-dot" style="background:var(--green)"></div>
+          <div></div>
+          <div>
+            <div class="tl-role">Agri-Tech Practitioner &amp; Urban Farm Operator</div>
+            <div class="tl-where">PERSONAL PROJECT · BASHABO ROOFTOP, DHAKA</div>
+            <ul class="tl-body">
+              <li>Structured rooftop farm: 3 cage units (exact dimensions), dedicated store room</li>
+              <li>BSF self-harvesting sack system — 35–45° ramp, dark bottle, jute climbing surface</li>
+              <li>Fermented feed protocol — eliminates open wet feed risks, increases nutrients ~3×</li>
+              <li>Multi-layer pest control: grease barriers, water moat, Fipronil gel, DIY boric acid</li>
+              <li>Woodcraft: Chambul timber frames for humidity-resistant cage structures</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section id="pricing">
-      <div class="section-label reveal">04 — TRANSPARENT RATES</div>
-      <h2 class="section-title reveal">PRICING & PACKAGES</h2>
+    <section id="pricing" style="background: var(--bg2)">
+      <div class="section-label reveal">06 — TRANSPARENT RATES</div>
+      <h2 class="section-title reveal">PRICING &amp;<br>PACKAGES</h2>
       <p class="section-sub reveal">Demo rates. International in USD. Dhaka in BDT. Scope first, then quote.</p>
 
       <div class="price-tabs reveal">
@@ -1825,13 +2158,51 @@
       </p>
     </section>
 
+    <!-- ROADMAP -->
+    <section id="roadmap">
+      <div class="section-label reveal">07 — FUTURE ROADMAP</div>
+      <h2 class="section-title reveal">WHERE THIS<br>IS HEADING.</h2>
+      <div class="roadmap-grid">
+        <div class="roadmap-card reveal">
+          <div class="roadmap-phase">PHASE 1 — ACTIVE NOW</div>
+          <div class="roadmap-title">🚀 UltraSave Ecosystem Launch</div>
+          <p class="roadmap-body">Complete all three platform builds, submit to Play Store, optimize AdMob revenue, start organic traffic to Next.js landing page. First passive income.</p>
+        </div>
+        <div class="roadmap-card reveal">
+          <div class="roadmap-phase">PHASE 2 — NEAR TERM</div>
+          <div class="roadmap-title">💰 Neural-Nexus Commission Empire</div>
+          <p class="roadmap-body">Launch first Micro-SaaS node — automated affiliate sites powered by AI agents. Target: ৳10,000+/month passive from three independently operating nodes.</p>
+        </div>
+        <div class="roadmap-card reveal">
+          <div class="roadmap-phase">PHASE 3 — MEDIUM TERM</div>
+          <div class="roadmap-title">🌐 Client Portfolio Growth</div>
+          <p class="roadmap-body">Scale to 3–5 active client projects/month. Build recurring maintenance income. Student market as pipeline for long-term client relationships.</p>
+        </div>
+        <div class="roadmap-card reveal">
+          <div class="roadmap-phase">PHASE 4 — AGRI-TECH</div>
+          <div class="roadmap-title">🌾 BSF + IoT Documentation</div>
+          <p class="roadmap-body">Add IoT sensors to rooftop farm. Document feed-to-output ratios, cycle optimization. Publish as replicable BD urban farming model — YouTube series.</p>
+        </div>
+        <div class="roadmap-card reveal">
+          <div class="roadmap-phase">PHASE 5 — GLOBAL</div>
+          <div class="roadmap-title">✈️ Australia — IT / AgriTech Migration</div>
+          <p class="roadmap-body">Skilled worker migration to Australia. Full research done on Border Security customs rules for PC components. Plan exists. Execution in progress.</p>
+        </div>
+        <div class="roadmap-card reveal">
+          <div class="roadmap-phase">PHASE 6 — EDUCATION</div>
+          <div class="roadmap-title">🎓 BSc CSE Completion</div>
+          <p class="roadmap-body">Complete B.Sc. CSE at BIST. Academic credential combined with shipped products and client work = uniquely strong profile for global opportunities.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-label reveal">05 — LET'S WORK</div>
-      <h2 class="section-title reveal">GET IN TOUCH</h2>
+    <section id="contact" style="background: var(--bg2)">
+      <div class="section-label reveal">08 — GET IN TOUCH</div>
+      <h2 class="section-title reveal">LET'S WORK<br>TOGETHER.</h2>
       <p class="section-sub reveal">
         Middle East, EU, UK, USA, Canada, Australia — and local Dhaka.
-        Open to web projects, apps, IT consulting, digital business setups.
+        Open to web projects, apps, IT consulting, hardware builds, digital setups.
       </p>
       <div class="contact-grid">
         <div class="contact-left">
@@ -1867,7 +2238,7 @@
             <div class="contact-icon">⚡</div>
             <div>
               <div class="contact-label">Status</div>
-              <div class="contact-value">Available for Remote & Local</div>
+              <div class="contact-value">Available for Remote &amp; Local</div>
             </div>
           </div>
           <a href="https://wa.me/8801629944975" class="btn-whatsapp interactive reveal">
@@ -1903,6 +2274,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -1912,7 +2284,7 @@
     </div>
     <div class="footer-center">
       <div class="footer-tagline">Built from soil. Shaped by hand. Shipped in code.</div>
-      <a href="about.html" class="footer-about-link interactive">Know More About Me →</a>
+      <a href="index.html" class="footer-about-link interactive">← Back to Portfolio</a>
     </div>
     <div class="social-row">
       <div class="social-item">
@@ -1939,8 +2311,6 @@
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let cx = 0, cy = 0, rx = 0, ry = 0;
-    let ringScaleVal = 1;
-    let cursorScale = 1;
 
     function lerp(a, b, t) { return a + (b - a) * t; }
 
@@ -1949,25 +2319,25 @@
       cy = e.clientY;
     });
 
-    document.addEventListener('mousedown', () => { cursorScale = 0.7; });
-    document.addEventListener('mouseup', () => { cursorScale = 1; });
+    document.addEventListener('mousedown', () => document.body.classList.add('mouse-down'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('mouse-down'));
 
     document.querySelectorAll('.interactive').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        ringScaleVal = 2;
-        ring.classList.add('hover-scale');
-      });
-      el.addEventListener('mouseleave', () => {
-        ringScaleVal = 1;
-        ring.classList.remove('hover-scale');
-      });
+      el.addEventListener('mouseenter', () => document.body.classList.add('hovering-interactive'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering-interactive'));
     });
 
     function tick() {
       rx = lerp(rx, cx, 0.12);
       ry = lerp(ry, cy, 0.12);
+      let ringScale = 1;
+      if (document.body.classList.contains('hovering-letter')) ringScale = 0.6;
+      else if (document.body.classList.contains('hovering-interactive')) ringScale = 2;
+      const cursorScale = document.body.classList.contains('mouse-down') ? 0.7 : 1;
       cursor.style.transform = `translate(${cx - 4}px, ${cy - 4}px) scale(${cursorScale})`;
-      ring.style.transform = `translate(${rx - 20}px, ${ry - 20}px) scale(${ringScaleVal})`;
+      ring.style.transform = `translate(${rx - 20}px, ${ry - 20}px) scale(${ringScale})`;
+      if (document.body.classList.contains('hovering-interactive')) ring.style.borderColor = 'var(--gold)';
+      else ring.style.borderColor = '';
       requestAnimationFrame(tick);
     }
     tick();
@@ -2006,11 +2376,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* Hero stats counters on load */
-    setTimeout(() => {
-      document.querySelectorAll('.hero-stats .counter').forEach(animateCounter);
-    }, 900);
-
     /* 5. Counter animation */
     function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
 
@@ -2031,6 +2396,16 @@
       }
       requestAnimationFrame(frame);
     }
+
+    document.querySelectorAll('.counter').forEach(counter => {
+      const cObs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          animateCounter(counter);
+          cObs.disconnect();
+        }
+      }, { threshold: 0.5 });
+      cObs.observe(counter);
+    });
 
     /* 6. Magnetic buttons */
     document.querySelectorAll('.btn-magnetic').forEach(btn => {
@@ -2070,9 +2445,12 @@
         });
       });
     }
-    applyStagger('.services-grid');
+    applyStagger('.spec-grid');
+    applyStagger('.agent-grid');
     applyStagger('.projects-grid');
+    applyStagger('.farm-cards');
     applyStagger('.skills-grid');
+    applyStagger('.roadmap-grid');
     applyStagger('.pricing-grid');
     applyStagger('#panel-apps .pricing-grid');
 
