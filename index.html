@@ -1,413 +1,1769 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Puson.Dev — AI Specialist & Cross-Platform Developer</title>
-<meta name="description" content="Md. Wahidur Rahman Puson — IT Specialist, Cross-Platform App Developer, and Agro-Tech Practitioner based in Dhaka, Bangladesh."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@200;300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --acc:#7c6dff;--acc2:#b89dff;--acc3:#38d9f8;--acc4:#f472b6;
-  --bg:#06060f;--bg2:#0d0d18;--bg3:#13131f;--bg4:#1a1a28;
-  --text:#f4f0ff;--muted:#9490ba;--muted2:#5e5a82;
-  --border:rgba(124,109,255,0.13);--border2:rgba(124,109,255,0.3);
-  --green:#22c55e;
-  --mono:'Space Mono',monospace;--sans:'Sora',sans-serif;--disp:'Bebas Neue',cursive;
-  --r8:8px;--r12:12px;--r16:16px;
-  --shadow-card:0 4px 32px rgba(0,0,0,.45);
-  --shadow-glow:0 0 40px rgba(124,109,255,.15);
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.7;overflow-x:hidden}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--acc),var(--acc3));border-radius:2px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md. Wahidur Rahman Puson — Web & App Developer · Dhaka</title>
+  <meta name="description" content="IT Specialist, Web & App Developer in Dhaka. Business digital ecosystems, Android apps, WordPress sites. Middle East, EU, UK, USA, Canada, Australia clients welcome.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ══ ANIMATED BG ══ */
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 70% 55% at 80% 10%,rgba(124,109,255,.09) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 45% at 10% 85%,rgba(56,217,248,.06) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%,rgba(244,114,182,.03) 0%,transparent 70%)}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.4;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")}
+    :root {
+      --bg:        #050709;
+      --bg2:       #0a0e16;
+      --bg3:       #0f1520;
+      --surface:   #141d2e;
+      --accent:    #00d4ff;
+      --accent2:   #0077ee;
+      --gold:      #f5c842;
+      --green:     #00e676;
+      --text:      #ddeeff;
+      --muted:     #5a7a9a;
+      --border:    rgba(0,212,255,0.1);
+      --ease-expo: cubic-bezier(0.16,1,0.3,1);
+      --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+    }
 
-/* ══ NAV ══ */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:.9rem 4rem;backdrop-filter:blur(28px) saturate(180%);background:rgba(6,6,15,.85);border-bottom:1px solid var(--border)}
-nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,109,255,.5),rgba(56,217,248,.3),transparent)}
-.nav-logo{font-family:var(--disp);font-size:22px;color:var(--text);letter-spacing:.1em;text-decoration:none;display:flex;align-items:center;gap:.4rem}
-.nav-logo .dot{color:var(--acc);font-size:2rem;line-height:0;position:relative;top:3px}
-.nav-logo .dev{font-family:var(--mono);font-size:11px;color:var(--acc3);letter-spacing:.15em;align-self:flex-end;margin-bottom:3px}
-.nav-links{display:flex;gap:0;list-style:none}
-.nav-links a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;letter-spacing:.12em;padding:.45rem 1rem;border-radius:var(--r8);transition:color .2s,background .2s}
-.nav-links a:hover{color:var(--acc2);background:rgba(124,109,255,.08)}
-.nav-badge{font-family:var(--mono);font-size:9px;background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.3);padding:4px 12px;border-radius:20px;letter-spacing:.1em;animation:blink-badge 2.5s ease-in-out infinite}
-@keyframes blink-badge{0%,100%{box-shadow:0 0 8px rgba(34,197,94,.15)}50%{box-shadow:0 0 18px rgba(34,197,94,.35)}}
+    html { scroll-behavior: smooth; }
 
-/* ══ HERO ══ */
-.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden;z-index:1}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(124,109,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(124,109,255,.03) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%);pointer-events:none}
-.hero-orb-1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(124,109,255,.11) 0%,transparent 70%);right:-150px;top:50%;transform:translateY(-50%);pointer-events:none;animation:orb-float 8s ease-in-out infinite}
-.hero-orb-2{position:absolute;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(56,217,248,.07) 0%,transparent 70%);left:-100px;bottom:0;pointer-events:none;animation:orb-float 11s ease-in-out infinite reverse}
-@keyframes orb-float{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-52%) scale(1.06)}}
-.hero-content{position:relative;z-index:1;max-width:900px}
-.hero-eyebrow{font-family:var(--mono);font-size:10px;color:var(--acc3);letter-spacing:.28em;text-transform:uppercase;margin-bottom:1.8rem;display:flex;align-items:center;gap:1rem;animation:fadeUp .6s .1s both}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:28px;height:1px;background:linear-gradient(90deg,var(--acc3),transparent)}
-.hero-eyebrow::after{background:linear-gradient(90deg,transparent,var(--acc3))}
-.hero-name{font-family:var(--disp);font-size:clamp(3.5rem,8.5vw,7.5rem);line-height:.92;letter-spacing:.04em;margin-bottom:.7rem;animation:fadeUp .6s .2s both}
-.hero-name .g1{background:linear-gradient(135deg,var(--acc),var(--acc3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-name .g2{background:linear-gradient(135deg,var(--acc2),var(--acc4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-brand{font-family:var(--mono);font-size:13px;color:var(--acc);letter-spacing:.28em;margin-bottom:1.2rem;animation:fadeUp .6s .25s both;display:flex;align-items:center;gap:.7rem}
-.hero-brand::before{content:'[  '}.hero-brand::after{content:'  ]'}
-.hero-brand::before,.hero-brand::after{color:var(--muted2)}
-.hero-roles{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;animation:fadeUp .6s .28s both}
-.role-pill{font-family:var(--mono);font-size:9px;padding:5px 12px;border-radius:20px;letter-spacing:.1em;border:1px solid}
-.role-pill.it{background:rgba(56,217,248,.07);color:#7dd3fc;border-color:rgba(56,217,248,.2)}
-.role-pill.dev{background:rgba(124,109,255,.08);color:var(--acc2);border-color:var(--border2)}
-.role-pill.farm{background:rgba(196,154,90,.07);color:#d4b07a;border-color:rgba(196,154,90,.2)}
-.hero-bio{font-size:.97rem;color:var(--muted);max-width:640px;margin-bottom:2.2rem;line-height:2;font-weight:300;animation:fadeUp .6s .32s both;border-left:2px solid rgba(124,109,255,.22);padding-left:1.2rem}
-.hero-bio em{color:var(--text);font-style:normal;font-weight:600}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .6s .38s both}
-.btn{padding:.8rem 2rem;border-radius:var(--r8);font-family:var(--mono);font-size:11px;letter-spacing:.12em;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;position:relative;overflow:hidden}
-.btn-primary{background:linear-gradient(135deg,var(--acc),rgba(124,109,255,.8));color:#fff;border:1px solid rgba(124,109,255,.5);box-shadow:0 4px 20px rgba(124,109,255,.3)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(124,109,255,.45)}
-.btn-ghost{background:rgba(124,109,255,.05);color:var(--muted);border:1px solid var(--border2)}
-.btn-ghost:hover{color:var(--acc2);border-color:var(--acc);background:rgba(124,109,255,.1);transform:translateY(-2px)}
-.btn-accent{background:linear-gradient(135deg,rgba(56,217,248,.1),rgba(124,109,255,.08));color:var(--acc3);border:1px solid rgba(56,217,248,.25)}
-.btn-accent:hover{background:rgba(56,217,248,.15);border-color:rgba(56,217,248,.5);transform:translateY(-2px);box-shadow:0 6px 20px rgba(56,217,248,.15)}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      cursor: none;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-/* ══ STATS BAR ══ */
-.hero-stats{display:flex;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(124,109,255,.1);animation:fadeUp .6s .48s both;flex-wrap:wrap;position:relative}
-.hero-stats::before{content:'';position:absolute;top:0;left:0;width:56px;height:2px;background:linear-gradient(90deg,var(--acc),transparent)}
-.stat .num{font-family:var(--disp);font-size:2.8rem;line-height:1;background:linear-gradient(135deg,var(--text),var(--acc2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat .lbl{font-family:var(--mono);font-size:9px;color:var(--muted2);letter-spacing:.12em;margin-top:4px;text-transform:uppercase}
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
 
-/* ══ SECTION COMMON ══ */
-section{padding:7rem 4rem;position:relative;z-index:1}
-.s-eyebrow{font-family:var(--mono);font-size:10px;color:var(--acc3);letter-spacing:.25em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.7rem}
-.s-eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--acc3)}
-h2.s-title{font-family:var(--disp);font-size:clamp(2rem,4.5vw,3.5rem);letter-spacing:.05em;line-height:.95;margin-bottom:.8rem}
-.s-desc{color:var(--muted);font-size:.95rem;max-width:580px;font-weight:300;margin-bottom:3rem;line-height:2}
-.divider{width:48px;height:3px;background:linear-gradient(90deg,var(--acc),var(--acc3),transparent);border-radius:2px;margin-bottom:2.5rem}
-.section-sep{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 4rem}
+    /* ── Cursor ── */
+    #cursor, #cursor-ring {
+      position: fixed;
+      pointer-events: none;
+      border-radius: 50%;
+      z-index: 9999;
+      will-change: transform;
+      top: 0;
+      left: 0;
+    }
+    #cursor {
+      width: 8px;
+      height: 8px;
+      background: #fff;
+    }
+    #cursor-ring {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--accent);
+      background: transparent;
+      transition: transform 0.15s ease, border-color 0.3s ease;
+    }
+    #cursor-ring.hover-scale {
+      border-color: var(--gold);
+    }
+    @media (pointer: coarse) {
+      #cursor, #cursor-ring { display: none; }
+      body { cursor: auto; }
+    }
+    #cursor.mousedown { transform-origin: center; }
 
-/* ══ SERVICES GRID ══ */
-#services{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%)}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
-.svc-card{background:linear-gradient(135deg,var(--bg3) 0%,rgba(124,109,255,.03) 100%);border:1px solid var(--border);border-radius:var(--r16);padding:2.2rem;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;box-shadow:var(--shadow-card)}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--acc),var(--acc3));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-card:hover{border-color:rgba(124,109,255,.4);transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.5),var(--shadow-glow)}
-.svc-icon{font-size:2rem;margin-bottom:1.2rem;display:block}
-.svc-name{font-size:1rem;font-weight:700;margin-bottom:.6rem;color:var(--text)}
-.svc-desc{font-size:.84rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1rem}
-.tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.tag{font-family:var(--mono);font-size:9px;background:rgba(124,109,255,.09);color:var(--acc2);padding:3px 9px;border-radius:3px;letter-spacing:.06em;border:1px solid rgba(124,109,255,.16)}
-.tag.blue{background:rgba(56,217,248,.07);color:#7dd3fc;border-color:rgba(56,217,248,.18)}
-.tag.green{background:rgba(34,197,94,.07);color:#4ade80;border-color:rgba(34,197,94,.18)}
+    /* ── Load anim ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .load-anim {
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-expo) forwards;
+      will-change: transform, opacity;
+    }
+    .load-anim:nth-child(1) { animation-delay: 0.1s; }
+    .load-anim:nth-child(2) { animation-delay: 0.22s; }
+    .load-anim:nth-child(3) { animation-delay: 0.34s; }
+    .load-anim:nth-child(4) { animation-delay: 0.46s; }
+    .load-anim:nth-child(5) { animation-delay: 0.58s; }
+    .load-anim:nth-child(6) { animation-delay: 0.7s; }
 
-/* ══ PROJECTS ══ */
-#projects{background:var(--bg)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
-.proj-card{background:linear-gradient(135deg,var(--bg3) 0%,rgba(124,109,255,.04) 100%);border:1px solid var(--border);border-radius:var(--r16);padding:2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s;display:flex;flex-direction:column;gap:.8rem;box-shadow:var(--shadow-card)}
-.proj-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--acc),var(--acc3),var(--acc4));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.proj-card:hover::after{transform:scaleX(1)}
-.proj-card:hover{border-color:rgba(124,109,255,.4);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.55),var(--shadow-glow)}
-.proj-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9px;padding:4px 10px;border-radius:4px;letter-spacing:.1em;width:fit-content;border:1px solid}
-.proj-badge.active{background:rgba(34,197,94,.1);color:#4ade80;border-color:rgba(34,197,94,.2)}
-.proj-badge.shipped{background:rgba(56,217,248,.1);color:#7dd3fc;border-color:rgba(56,217,248,.2)}
-.proj-badge.concept{background:rgba(245,158,11,.1);color:#fbbf24;border-color:rgba(245,158,11,.2)}
-.proj-title{font-size:1.1rem;font-weight:700;color:var(--text)}
-.proj-desc{font-size:.84rem;color:var(--muted);line-height:1.9;font-weight:300;flex:1}
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--green); }
+      50%      { opacity: 0.6; box-shadow: 0 0 16px var(--green); }
+    }
+    @keyframes pulseGlow {
+      0%   { box-shadow: 0 0 0 0 rgba(0,212,255,0.5); }
+      70%  { box-shadow: 0 0 0 14px rgba(0,212,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,212,255,0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0.5deg); }
+      50%      { transform: translateY(-12px) rotate(-0.5deg); }
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-/* ══ KNOW MORE CTA ══ */
-.know-more-section{background:linear-gradient(135deg,var(--bg2),var(--bg4));border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
-.know-more-inner{max-width:700px;margin:0 auto}
-.know-more-inner h2{font-family:var(--disp);font-size:clamp(2rem,4vw,3rem);letter-spacing:.06em;margin-bottom:1rem}
-.know-more-inner h2 span{background:linear-gradient(135deg,var(--acc),var(--acc3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.know-more-inner p{color:var(--muted);font-size:.95rem;font-weight:300;line-height:1.9;margin-bottom:2.5rem}
-.know-more-cards{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem;margin-bottom:2.5rem}
-.km-chip{font-family:var(--mono);font-size:9px;padding:5px 14px;border-radius:20px;letter-spacing:.1em;border:1px solid var(--border);color:var(--muted);background:rgba(124,109,255,.05)}
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px) scale(0.97);
+      transition: opacity 0.7s var(--ease-expo), transform 0.7s var(--ease-expo);
+      will-change: transform, opacity;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
-/* ══ CONTACT ══ */
-#contact{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:880px;margin-bottom:2rem}
-.c-card{background:linear-gradient(135deg,var(--bg3),rgba(124,109,255,.04));border:1px solid var(--border);border-radius:var(--r12);padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1rem;transition:border-color .25s,transform .25s,box-shadow .25s;cursor:default;box-shadow:var(--shadow-card);text-decoration:none;color:inherit}
-.c-card:hover{border-color:rgba(124,109,255,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.4),var(--shadow-glow)}
-.c-icon{font-size:1.1rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(124,109,255,.1);border-radius:var(--r8);flex-shrink:0;border:1px solid var(--border)}
-.c-lbl{font-family:var(--mono);font-size:9px;color:var(--muted2);letter-spacing:.12em;margin-bottom:3px}
-.c-val{font-size:.87rem;font-weight:600;color:var(--text)}
-.avail-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.5rem}
-.avail-chip{font-family:var(--mono);font-size:10px;padding:5px 14px;border-radius:20px;letter-spacing:.08em;border:1px solid}
-.avail-chip.open{background:rgba(34,197,94,.07);color:#4ade80;border-color:rgba(34,197,94,.25)}
-.avail-chip.neutral{background:rgba(124,109,255,.07);color:var(--acc2);border-color:var(--border2)}
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--accent);
+      width: 0;
+      margin-top: 0.5rem;
+      transition: width 1s var(--ease-expo);
+    }
+    .reveal.visible .section-label::after { width: 40px; }
 
-/* ══ FOOTER ══ */
-footer{text-align:center;padding:4rem 2rem;border-top:1px solid var(--border);position:relative;overflow:hidden;z-index:1}
-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acc),var(--acc3),transparent)}
-.footer-logo{font-family:var(--disp);font-size:2.8rem;background:linear-gradient(135deg,var(--acc),var(--acc3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.06em;margin-bottom:.5rem}
-footer p{font-family:var(--mono);font-size:10px;color:var(--muted2);letter-spacing:.12em;margin:.3rem 0}
-footer p span{color:var(--muted)}
-.footer-socials{display:flex;justify-content:center;gap:.8rem;margin:1.2rem 0;flex-wrap:wrap}
-.social-link{font-family:var(--mono);font-size:9px;padding:5px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);text-decoration:none;transition:all .2s;letter-spacing:.1em}
-.social-link:hover{border-color:var(--acc);color:var(--acc2);background:rgba(124,109,255,.08);transform:translateY(-2px)}
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: #fff;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
 
-/* ══ ANIMATIONS ══ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+    .section-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
 
-/* ══ RESPONSIVE ══ */
-@media(max-width:900px){
-  nav{padding:.8rem 1.5rem}
-  .nav-links{display:none}
-  .hero{padding:6rem 1.5rem 3rem}
-  section{padding:4rem 1.5rem}
-  .section-sep{margin:0 1.5rem}
-  .hero-stats{gap:1.5rem}
-  .hero-btns{flex-direction:column;align-items:flex-start}
-}
-</style>
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(5,7,9,0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: none;
+      padding: 4px;
+      z-index: 1002;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      transition: transform 0.3s var(--ease-expo), opacity 0.3s;
+      will-change: transform;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,7,9,0.98);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      z-index: 1001;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease-expo);
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      padding: 8rem 4rem 4rem;
+      background-image:
+        radial-gradient(circle at 70% 50%, rgba(0,119,238,0.08) 0%, transparent 60%),
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 70px 70px, 70px 70px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulseDot 2s ease infinite;
+      flex-shrink: 0;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .hero-name span { color: var(--accent); }
+
+    .hero-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--accent2);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0;
+    }
+
+    .btn-primary, .btn-knowmore {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.8rem 2rem;
+      display: inline-block;
+      transition: background 0.3s, transform 0.3s var(--ease-expo);
+      will-change: transform;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+    .btn-primary:hover {
+      background: #fff;
+      transform: translateY(-3px);
+    }
+    .btn-knowmore {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      animation: pulseGlow 2.2s ease infinite;
+    }
+    .btn-knowmore:hover {
+      background: rgba(0,212,255,0.08);
+      transform: translateY(-3px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 3rem;
+    }
+    .stat .counter,
+    .stat > div:first-child {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      display: inline;
+    }
+    .stat > span { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--accent); }
+    .stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 0.3rem;
+    }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+
+    .code-block {
+      background: #0a0f1a;
+      border: 1px solid rgba(0,212,255,0.2);
+      max-width: 420px;
+      width: 100%;
+      animation: float 5s ease-in-out infinite;
+      will-change: transform;
+    }
+    .code-header {
+      background: #0d1420;
+      padding: 0.7rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.red    { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green  { background: #27c93f; }
+    .code-filename {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-left: auto;
+    }
+    .code-block pre {
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+    .cm  { color: #4a6a8a; }
+    .kw  { color: #00d4ff; }
+    .str { color: #f5c842; }
+    .key { color: #7ecfff; }
+
+    /* ── Services ── */
+    #services {
+      padding: 8rem 4rem;
+      background: var(--bg2);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s var(--ease-expo), background 0.3s;
+      will-change: transform;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      border-color: rgba(0,212,255,0.4);
+      transform: translateY(-5px);
+      background: rgba(0,212,255,0.03);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .card-num {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      color: rgba(0,212,255,0.06);
+      line-height: 1;
+    }
+    .card-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .card-body {
+      font-weight: 300;
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+    .card-list li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .card-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .services-note {
+      margin-top: 2rem;
+      background: rgba(0,212,255,0.04);
+      border: 1px solid rgba(0,212,255,0.15);
+      padding: 1.2rem 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Projects ── */
+    #projects {
+      padding: 8rem 4rem;
+      background: var(--bg);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+      will-change: transform;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0,212,255,0.5);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .project-card:hover::before { transform: scaleX(1); }
+    @media (min-width: 1200px) {
+      .project-card.featured { grid-column: span 2; }
+    }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+    .badge-active   { background: rgba(0,212,255,0.08); color: #00d4ff; border-color: rgba(0,212,255,0.25); }
+    .badge-shipped  { background: rgba(0,230,118,0.08); color: #00e676; border-color: rgba(0,230,118,0.25); }
+    .badge-ongoing  { background: rgba(245,200,66,0.08); color: #f5c842; border-color: rgba(245,200,66,0.25); }
+    .badge-concept  { background: rgba(167,139,250,0.08); color: #a78bfa; border-color: rgba(167,139,250,0.25); }
+    .badge-live     { background: rgba(0,230,118,0.08); color: #00e676; border-color: rgba(0,230,118,0.25); }
+
+    .project-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+    .project-desc {
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .platform-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .platform-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid rgba(245,200,66,0.4);
+      color: var(--gold);
+      background: rgba(245,200,66,0.08);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      background: rgba(0,212,255,0.08);
+      color: var(--accent);
+      padding: 0.25rem 0.6rem;
+      border: 1px solid rgba(0,212,255,0.15);
+      transition: background 0.2s;
+    }
+    .tag:hover { background: rgba(0,212,255,0.18); }
+
+    /* ── Skills ── */
+    #skills {
+      padding: 8rem 4rem;
+      background: var(--bg2);
+    }
+    .ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      margin-bottom: 3rem;
+    }
+    .ticker-track {
+      display: flex;
+      animation: marquee 35s linear infinite;
+      will-change: transform;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-track span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-right: 2rem;
+      flex-shrink: 0;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .skill-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      transition: border-color 0.3s, transform 0.3s var(--ease-expo);
+      will-change: transform;
+    }
+    .skill-card:hover {
+      border-color: rgba(0,212,255,0.35);
+      transform: translateY(-3px);
+    }
+    .skill-cat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+    }
+    .skill-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── Pricing ── */
+    #pricing {
+      padding: 8rem 4rem;
+      background: var(--bg);
+    }
+    .price-tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .price-tab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      cursor: none;
+      color: var(--muted);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .price-tab.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(0,212,255,0.06);
+    }
+    .price-tab:not(.active):hover { border-color: rgba(0,212,255,0.3); }
+
+    .price-panel { display: none; }
+    .price-panel.active { display: block; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      position: relative;
+    }
+    .price-card.featured {
+      border-color: var(--gold);
+    }
+    .recommended-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+    .price-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      padding-right: 4rem;
+    }
+    .price-usd {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .price-usd-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .price-sep {
+      height: 1px;
+      background: var(--border);
+      margin: 0.8rem 0;
+    }
+    .price-bdt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--gold);
+    }
+    .price-bdt-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+    .price-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1rem 0;
+    }
+    .price-includes li {
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .price-includes li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .maint-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .maint-table th,
+    .maint-table td {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 1rem 1.2rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .maint-table th {
+      color: var(--accent);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .maint-table td { color: var(--muted); }
+    .maint-table td:last-child { color: var(--gold); }
+
+    .pricing-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      margin-top: 2rem;
+      line-height: 1.8;
+    }
+
+    /* ── Contact ── */
+    #contact {
+      padding: 8rem 4rem;
+      background: var(--bg2);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.5rem;
+      margin-bottom: 0.8rem;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: rgba(0,212,255,0.3); }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(0,212,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .contact-value {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .btn-whatsapp {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: #25D366;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-top: 0.5rem;
+      transition: filter 0.2s;
+    }
+    .btn-whatsapp:hover { filter: brightness(1.1); }
+
+    .market-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.2rem;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+    .chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      border: 1px solid;
+      transition: opacity 0.2s;
+    }
+    .chip:hover { opacity: 0.85; }
+    .chip-gold  { color: var(--gold);  border-color: rgba(245,200,66,0.3);  background: rgba(245,200,66,0.06); }
+    .chip-blue  { color: var(--accent); border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.06); }
+    .chip-green { color: var(--green); border-color: rgba(0,230,118,0.3); background: rgba(0,230,118,0.06); }
+
+    .availability {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .avail-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .avail-item .dot-green { color: var(--green); }
+    .avail-item .dot-gold  { color: var(--gold); }
+
+    /* ── Footer ── */
+    footer {
+      background: #030507;
+      border-top: 1px solid var(--border);
+      padding: 3rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-meta {
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-center { text-align: center; }
+    .footer-tagline {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .footer-about-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .footer-about-link:hover { color: var(--accent); }
+    .social-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .social-item { text-align: center; }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: border-color 0.2s;
+      margin: 0 auto 0.3rem;
+    }
+    .social-link:hover { border-color: var(--accent); }
+    .social-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1199px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { order: 2; }
+      .project-card.featured { grid-column: span 1; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero {
+        padding: 5rem 1.5rem 3rem;
+        grid-template-columns: 1fr;
+      }
+      .hero-right, .code-block { display: none; }
+
+      #services, #projects, #skills, #pricing, #contact {
+        padding: 5rem 1.5rem;
+      }
+
+      .hero-name { font-size: clamp(3rem, 10vw, 4.5rem); }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem;
+        gap: 1.5rem;
+      }
+      .footer-center { order: -1; }
+    }
+
+    @media (min-width: 1200px) {
+      .hero-right { display: flex; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
-<nav>
-  <a href="#" class="nav-logo">Puson<span class="dot">.</span><span class="dev">Dev</span></a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="about.html">Full Profile</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <span class="nav-badge">● AVAILABLE FOR HIRE</span>
-</nav>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
 
-<!-- ══ HERO ══ -->
-<section class="hero" id="home">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb-1"></div>
-  <div class="hero-orb-2"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Dhaka, Bangladesh &nbsp;·&nbsp; BSc CSE, BIST &nbsp;·&nbsp; Est. 2023</div>
-    <h1 class="hero-name">
-      MD. <span class="g1">WAHIDUR</span><br>
-      <span class="g2">RAHMAN</span> PUSON
-    </h1>
-    <div class="hero-brand">Puson.Dev</div>
-    <div class="hero-roles">
-      <span class="role-pill it">IT Specialist &amp; Consultant</span>
-      <span class="role-pill dev">Cross-Platform App Developer</span>
-      <span class="role-pill farm">Agro-Tech Practitioner</span>
+  <nav id="nav">
+    <a href="#" class="nav-brand interactive">Puson<span>.Dev</span></a>
+    <div class="nav-links">
+      <a href="#services" class="interactive">Services</a>
+      <a href="#projects" class="interactive">Projects</a>
+      <a href="#skills" class="interactive">Skills</a>
+      <a href="#pricing" class="interactive">Pricing</a>
+      <a href="#contact" class="interactive">Contact</a>
     </div>
-    <p class="hero-bio">
-      B.Sc. CSE student at BIST — building <em>real cross-platform software</em>, providing PC hardware consultancy across Dhaka, and running a science-based rooftop farm. An <em>"Objective Truth-Seeker"</em> — zero-hallucination in code, hardware calls, and every technical decision.
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">→ View Projects</a>
-      <a href="about.html" class="btn btn-accent">◉ Know More About Me</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="num">15+</div><div class="lbl">PC Builds Done</div></div>
-      <div class="stat"><div class="num">5+</div><div class="lbl">Tech Stacks</div></div>
-      <div class="stat"><div class="num">3+</div><div class="lbl">Products Shipped</div></div>
-      <div class="stat"><div class="num">500+</div><div class="lbl">FPS — Valorant</div></div>
-    </div>
+    <button class="hamburger interactive" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" class="interactive mobile-link">Services</a>
+    <a href="#projects" class="interactive mobile-link">Projects</a>
+    <a href="#skills" class="interactive mobile-link">Skills</a>
+    <a href="#pricing" class="interactive mobile-link">Pricing</a>
+    <a href="#contact" class="interactive mobile-link">Contact</a>
   </div>
-</section>
 
-<div class="section-sep"></div>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <div class="hero-content">
+          <div class="hero-eyebrow load-anim">
+            <span class="status-dot"></span>
+            AVAILABLE FOR HIRE · 2026
+          </div>
+          <h1 class="hero-name load-anim">
+            MD. WAHIDUR<br>
+            <span>RAHMAN PUSON</span>
+          </h1>
+          <div class="hero-role load-anim">
+            Web & App Developer · IT Specialist · Digital Consultant
+          </div>
+          <p class="hero-desc load-anim">
+            I build complete digital ecosystems for businesses — not just websites,
+            but connected systems that capture leads, automate marketing, and work
+            while you sleep. Multi-platform apps in Electron, Flutter & Next.js.
+            Based in Dhaka — working globally.
+          </p>
+          <div class="hero-btns load-anim">
+            <a href="#projects" class="btn-primary btn-magnetic interactive">→ View Projects</a>
+            <a href="about.html" class="btn-knowmore btn-magnetic interactive">◉ Know More About Me</a>
+          </div>
+          <div class="hero-stats load-anim">
+            <div class="stat">
+              <div><span class="counter" data-target="15" data-suffix="+">0</span></div>
+              <div class="stat-label">PC Builds</div>
+            </div>
+            <div class="stat">
+              <div><span class="counter" data-target="3">0</span></div>
+              <div class="stat-label">Platforms Shipped</div>
+            </div>
+            <div class="stat">
+              <div><span class="counter" data-target="500" data-suffix="+">0</span></div>
+              <div class="stat-label">FPS Achieved</div>
+            </div>
+            <div class="stat">
+              <div>2026</div>
+              <div class="stat-label">Active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="code-block">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-filename">ultrasave.config.js</span>
+          </div>
+          <pre><code><span class="cm">// UltraSave Ecosystem Config</span>
+<span class="kw">export default</span> {
+  <span class="key">name</span>: <span class="str">'UltraSave'</span>,
+  <span class="key">platforms</span>: [
+    <span class="str">'windows'</span>, <span class="str">'android'</span>, <span class="str">'web'</span>
+  ],
+  <span class="key">engine</span>: <span class="str">'yt-dlp + ffmpeg'</span>,
+  <span class="key">stack</span>: {
+    <span class="key">desktop</span>: <span class="str">'Electron + React + Vite'</span>,
+    <span class="key">mobile</span>:  <span class="str">'Flutter + Dart'</span>,
+    <span class="key">web</span>:     <span class="str">'Next.js'</span>
+  },
+  <span class="key">monetization</span>: [<span class="str">'AdMob'</span>, <span class="str">'AdSense'</span>],
+  <span class="key">adFilter</span>: <span class="str">'halal'</span>,
+  <span class="key">status</span>: <span class="str">'ACTIVE'</span> <span class="cm">✓</span>
+}</code></pre>
+        </div>
+      </div>
+    </section>
 
-<!-- ══ SERVICES ══ -->
-<section id="services">
-  <div class="s-eyebrow">01 — What I Do</div>
-  <h2 class="s-title">CORE<br>SERVICES</h2>
-  <div class="divider"></div>
-  <p class="s-desc">From bare-metal PC builds to autonomous AI agent workflows — here's what I bring to every project.</p>
-  <div class="svc-grid">
-    <div class="svc-card reveal">
-      <span class="svc-icon">🤖</span>
-      <div class="svc-name">AI Integration &amp; Automation</div>
-      <div class="svc-desc">Integrating LLMs and autonomous AI agent workflows into software products. Building technical roadmaps and PRDs for AI-driven applications.</div>
-      <div class="tags"><span class="tag blue">Claude</span><span class="tag blue">GPT-4o</span><span class="tag blue">Cursor AI</span><span class="tag blue">Windsurf</span><span class="tag">LLM Prompting</span></div>
-    </div>
-    <div class="svc-card reveal">
-      <span class="svc-icon">💻</span>
-      <div class="svc-name">Cross-Platform App Development</div>
-      <div class="svc-desc">Full-stack web apps, Electron-based Windows apps, and Android APKs — with premium UI, AdMob monetization, and full deployment pipeline.</div>
-      <div class="tags"><span class="tag">Next.js</span><span class="tag">Electron</span><span class="tag">Flutter</span><span class="tag">Supabase</span><span class="tag">Firebase</span></div>
-    </div>
-    <div class="svc-card reveal">
-      <span class="svc-icon">🖥️</span>
-      <div class="svc-name">Custom PC Build &amp; IT Consulting</div>
-      <div class="svc-desc">15+ AMD Ryzen builds completed. BIOS tuning, kernel-level optimization, hardware troubleshooting, and OS deployment across Dhaka.</div>
-      <div class="tags"><span class="tag green">AMD Ryzen</span><span class="tag">MSI Platform</span><span class="tag">BIOS Tuning</span><span class="tag">DDU</span><span class="tag green">500+ FPS</span></div>
-    </div>
-    <div class="svc-card reveal">
-      <span class="svc-icon">🎨</span>
-      <div class="svc-name">UI/UX &amp; Brand Design</div>
-      <div class="svc-desc">Premium, luxury-grade interface design — dark mode, glassmorphism, micro-animations. From landing pages to full dashboard systems.</div>
-      <div class="tags"><span class="tag">Figma</span><span class="tag">Canva Pro</span><span class="tag">HTML/CSS</span><span class="tag">Glassmorphism</span></div>
-    </div>
-    <div class="svc-card reveal">
-      <span class="svc-icon">📱</span>
-      <div class="svc-name">Android App (AdMob Ready)</div>
-      <div class="svc-desc">Flutter-based Android apps with full AdMob integration, Play Store deployment, crash monitoring, and OS compatibility patches.</div>
-      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">AdMob</span><span class="tag">Play Store</span></div>
-    </div>
-    <div class="svc-card reveal">
-      <span class="svc-icon">🌾</span>
-      <div class="svc-name">Agro-Tech Systems (Dhaka)</div>
-      <div class="svc-desc">Science-based urban farming consultancy — BSF bioconversion, fermented feed systems, cage design, and profitability calculation for Dhaka operations.</div>
-      <div class="tags"><span class="tag" style="color:#d4b07a;border-color:rgba(196,154,90,.3)">BSF System</span><span class="tag" style="color:#8fbc6e;border-color:rgba(143,188,110,.3)">Fermented Feed</span><span class="tag" style="color:#d4b07a;border-color:rgba(196,154,90,.3)">Sonali Classic</span></div>
-    </div>
-  </div>
-</section>
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-label reveal">01 — WHAT I BUILD</div>
+      <h2 class="section-title reveal">FULL BUSINESS<br>DIGITAL ECOSYSTEMS</h2>
+      <p class="section-sub reveal">
+        Not just a website. A connected system that captures leads,
+        builds your audience, and works automatically.
+      </p>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="card-num">01</div>
+          <div class="card-icon">🌐</div>
+          <div class="card-title">Professional Website</div>
+          <p class="card-body">Not just a page — a fast, mobile-first business site with CMS, SEO basics, SSL, contact form. Leads sent directly to owner's WhatsApp.</p>
+          <ul class="card-list">
+            <li>WordPress or Next.js</li>
+            <li>Page speed optimized</li>
+            <li>Booking or inquiry form</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">02</div>
+          <div class="card-icon">📍</div>
+          <div class="card-title">Google Maps & Local SEO</div>
+          <p class="card-body">Google Business Profile fully set up. Live map on site. Show up when people search nearby. Review strategy briefing included.</p>
+          <ul class="card-list">
+            <li>Google Maps embedded</li>
+            <li>Category + photos + hours</li>
+            <li>Local search visibility</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">03</div>
+          <div class="card-icon">📱</div>
+          <div class="card-title">Social Media Integration</div>
+          <p class="card-body">Facebook + Instagram properly connected to website. WhatsApp Business chat button live on day one. Unified brand across all channels.</p>
+          <ul class="card-list">
+            <li>All platforms connected</li>
+            <li>WhatsApp chat button</li>
+            <li>Consistent branding</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">04</div>
+          <div class="card-icon">🎯</div>
+          <div class="card-title">Facebook Funnel Infrastructure</div>
+          <p class="card-body">Pixel installed from day one. Lead capture landing page built. Retargeting-ready — data collecting before first ad is ever run.</p>
+          <ul class="card-list">
+            <li>Pixel + lead forms</li>
+            <li>Promotion landing page</li>
+            <li>Ready when ads start</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">05</div>
+          <div class="card-icon">📧</div>
+          <div class="card-title">Email Marketing Setup</div>
+          <p class="card-body">Professional business email + Mailchimp + list collection form + 3-email welcome sequence, automated and live at launch.</p>
+          <ul class="card-list">
+            <li>name@yourbusiness.com</li>
+            <li>Email list you own forever</li>
+            <li>Automated welcome sequence</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">06</div>
+          <div class="card-icon">💬</div>
+          <div class="card-title">WhatsApp & Telegram</div>
+          <p class="card-body">WhatsApp Business fully configured. Click-to-chat everywhere. QR codes for print. Broadcast list setup guide.</p>
+          <ul class="card-list">
+            <li>Customer number collection</li>
+            <li>QR codes for print material</li>
+            <li>Telegram channel option</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">07</div>
+          <div class="card-icon">🗃️</div>
+          <div class="card-title">Customer Data System</div>
+          <p class="card-body">Forms, QR, email signup, Google Forms backup. Client owns 100% of collected data — phone, email, name at every touchpoint.</p>
+          <ul class="card-list">
+            <li>Data belongs to client</li>
+            <li>Multi-channel collection</li>
+            <li>Ready for campaigns</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="card-num">08</div>
+          <div class="card-icon">🎨</div>
+          <div class="card-title">Logo & Brand Identity</div>
+          <p class="card-body">3 logo concepts. Color palette. Font kit. All file formats. Brand applied consistently across website + all social channels.</p>
+          <ul class="card-list">
+            <li>PNG + SVG + PDF delivery</li>
+            <li>Color + font guide</li>
+            <li>Social media variants</li>
+          </ul>
+        </div>
+      </div>
+      <div class="services-note reveal">
+        ⚡ NOT included: video ad production, ongoing ad management, complex SaaS.
+        I build the infrastructure — you run your marketing on top.
+      </div>
+    </section>
 
-<div class="section-sep"></div>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label reveal">02 — SHIPPED PRODUCTS</div>
+      <h2 class="section-title reveal">THINGS I BUILT</h2>
+      <p class="section-sub reveal">Real products. Not mockups collecting dust.</p>
+      <div class="projects-grid">
+        <div class="project-card featured reveal">
+          <span class="badge badge-active">🚀 ACTIVE · FLAGSHIP</span>
+          <div class="project-title">UltraSave — 3-Platform Ecosystem</div>
+          <p class="project-desc">A complete social media video/audio downloader across three platforms. Windows desktop app (Electron + React + Vite, bundled yt-dlp + ffmpeg), Android APK (Flutter + Dart, AdMob monetization, halal ad filters), and a Next.js landing & distribution website. Full IPC bridge implemented. 1000+ sites supported via yt-dlp. Dark UI #0f0f13 accent #6c63ff across all three platforms.</p>
+          <div class="platform-pills">
+            <span class="platform-pill">Windows EXE</span>
+            <span class="platform-pill">Android APK</span>
+            <span class="platform-pill">Next.js Site</span>
+          </div>
+          <div class="tags">
+            <span class="tag">Electron</span>
+            <span class="tag">React+Vite</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">yt-dlp</span>
+            <span class="tag">ffmpeg</span>
+            <span class="tag">AdMob</span>
+            <span class="tag">AdSense</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <span class="badge badge-ongoing">📺 ONGOING · 2022–PRESENT</span>
+          <div class="project-title">Bengali Tech YouTube Channel</div>
+          <p class="project-desc">Faceless Bengali-language tech channel for Bangladeshi PC builders, gamers, and AI learners. Full production pipeline: script → ElevenLabs AI voiceover → Canva visuals → DaVinci Resolve edit → OBS → publish. Notable: exposed RX 580 2048SP GPU rebranding scam in the Bangladeshi second-hand market.</p>
+          <div class="tags">
+            <span class="tag">ElevenLabs</span>
+            <span class="tag">Canva</span>
+            <span class="tag">DaVinci Resolve</span>
+            <span class="tag">OBS</span>
+            <span class="tag">Bengali SEO</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <span class="badge badge-shipped">◆ SHIPPED · CLIENT</span>
+          <div class="project-title">Dental Point — Dr. Jerin</div>
+          <p class="project-desc">Production-grade dental appointment booking system. WhatsApp Cloud API integration, Supabase backend, automated cron worker, admin dashboard. Full deployment on Vercel.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">WhatsApp API</span>
+            <span class="tag">Vercel</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <span class="badge badge-shipped">◆ SHIPPED · CLIENT</span>
+          <div class="project-title">Jennah Boutique — E-commerce SPA</div>
+          <p class="project-desc">Pixel-perfect luxury e-commerce single-page application. Full mega-menu, product pages, functional cart logic, responsive layouts — built as a single portable HTML file for client proposal demo.</p>
+          <div class="tags">
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">SPA</span>
+            <span class="tag">E-commerce</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <span class="badge badge-concept">💡 CONCEPT · IN PROGRESS</span>
+          <div class="project-title">Project Neural-Nexus</div>
+          <p class="project-desc">AI-driven Micro-SaaS and affiliate ecosystem — 'Commission Empire' model. Multi-AI agents (Claude, Cursor, OpenHands, Cline, Devin) coordinated for code generation, marketing automation, and passive affiliate revenue stacking.</p>
+          <div class="tags">
+            <span class="tag">AI/LLM</span>
+            <span class="tag">Micro-SaaS</span>
+            <span class="tag">Affiliate</span>
+            <span class="tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <span class="badge badge-live">🌿 LIVE · NETLIFY</span>
+          <div class="project-title">Natural Treatment Blog</div>
+          <p class="project-desc">Holistic health authority blog on Netlify. Built for AEO (Answer Engine Optimization) — AI search engines like Perplexity and ChatGPT pull content directly. Passive income via affiliate links + AdSense.</p>
+          <div class="tags">
+            <span class="tag">Netlify</span>
+            <span class="tag">SEO</span>
+            <span class="tag">AEO</span>
+            <span class="tag">AdSense</span>
+            <span class="tag">Affiliate</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- ══ PROJECTS ══ -->
-<section id="projects">
-  <div class="s-eyebrow">02 — Selected Work</div>
-  <h2 class="s-title">ECOSYSTEM<br>SHOWCASE</h2>
-  <div class="divider"></div>
-  <p class="s-desc">Real products built, shipped, and maintained. No mockups — only production-grade systems.</p>
-  <div class="proj-grid">
-    <div class="proj-card reveal">
-      <span class="proj-badge active">● ACTIVE</span>
-      <div class="proj-title">UltraSave Ecosystem</div>
-      <div class="proj-desc">A full cross-platform media downloader — Next.js web app, Electron Windows app (with bundled yt-dlp), and Flutter Android APK. Premium glassmorphism UI across all three platforms.</div>
-      <div class="tags"><span class="tag">Next.js</span><span class="tag">Electron</span><span class="tag">Flutter</span><span class="tag blue">yt-dlp</span></div>
-    </div>
-    <div class="proj-card reveal">
-      <span class="proj-badge shipped">◆ SHIPPED</span>
-      <div class="proj-title">Dental Point — Dr. Jerin</div>
-      <div class="proj-desc">Production-grade dental appointment booking system with WhatsApp Cloud API integration, Supabase backend, automated cron worker, and an admin dashboard.</div>
-      <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag blue">WhatsApp API</span><span class="tag">Vercel</span></div>
-    </div>
-    <div class="proj-card reveal">
-      <span class="proj-badge shipped">◆ SHIPPED</span>
-      <div class="proj-title">Jennah Boutique</div>
-      <div class="proj-desc">Pixel-perfect luxury e-commerce SPA replication with full mega-menus, product pages, functional cart logic, and responsive layouts. Built as a single portable HTML file.</div>
-      <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">SPA</span><span class="tag">E-commerce</span></div>
-    </div>
-    <div class="proj-card reveal">
-      <span class="proj-badge active">● ACTIVE</span>
-      <div class="proj-title">Free Media Downloader Ecosystem</div>
-      <div class="proj-desc">A comprehensive free social media video and audio downloader — multi-platform, serverless architecture with a clean modern UI.</div>
-      <div class="tags"><span class="tag blue">yt-dlp</span><span class="tag">Next.js</span><span class="tag">Electron</span><span class="tag">Flutter</span></div>
-    </div>
-    <div class="proj-card reveal">
-      <span class="proj-badge shipped">◆ SHIPPED</span>
-      <div class="proj-title">Puson.Dev Portfolio</div>
-      <div class="proj-desc">A luxury dark-mode portfolio built with pure HTML/CSS — Space Mono, Bebas Neue, animated orbs, glassmorphism cards, and a full "Know More" deep-dive page.</div>
-      <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">Vercel</span><span class="tag">GitHub</span></div>
-    </div>
-    <div class="proj-card reveal">
-      <span class="proj-badge concept">◐ UPCOMING</span>
-      <div class="proj-title">IT Operations Buildout</div>
-      <div class="proj-desc">Full local IT operation — hardware sourcing, service, and support — combined with a rooftop agro-tech farm. Target: self-sustaining operation by late 2026.</div>
-      <div class="tags"><span class="tag" style="color:#d4b07a;border-color:rgba(196,154,90,.3)">Agro-Tech</span><span class="tag green">IT Services</span><span class="tag">Dhaka</span></div>
-    </div>
-  </div>
-</section>
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-label reveal">03 — TECH STACK</div>
+      <h2 class="section-title reveal">SKILLS & TOOLS</h2>
+      <div class="ticker-wrap reveal">
+        <div class="ticker-track">
+          <span>React · Next.js · Flutter · Dart · Electron · Vite · Firebase · Firestore · WordPress · yt-dlp · ffmpeg · AdMob · AdSense · DaVinci Resolve · OBS · ElevenLabs · Claude AI · Cursor · OpenHands · AMD Ryzen · BIOS Tuning · DDU · GPU-Z · Git · Python · VS Code ·&nbsp;&nbsp;&nbsp;</span>
+          <span>React · Next.js · Flutter · Dart · Electron · Vite · Firebase · Firestore · WordPress · yt-dlp · ffmpeg · AdMob · AdSense · DaVinci Resolve · OBS · ElevenLabs · Claude AI · Cursor · OpenHands · AMD Ryzen · BIOS Tuning · DDU · GPU-Z · Git · Python · VS Code ·&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-cat">WEB DEV</div>
+          <div class="skill-name">Web Development</div>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Next.js</span><span class="tag">HTML/CSS</span><span class="tag">WordPress</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">MOBILE</div>
+          <div class="skill-name">Android Apps</div>
+          <div class="tags">
+            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">AdMob</span><span class="tag">Play Store</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">DESKTOP</div>
+          <div class="skill-name">Windows Apps</div>
+          <div class="tags">
+            <span class="tag">Electron</span><span class="tag">Node.js</span><span class="tag">IPC Bridge</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">BACKEND</div>
+          <div class="skill-name">Cloud & DB</div>
+          <div class="tags">
+            <span class="tag">Firebase</span><span class="tag">Firestore</span><span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">VIDEO</div>
+          <div class="skill-name">Content Production</div>
+          <div class="tags">
+            <span class="tag">DaVinci Resolve</span><span class="tag">HitFilm</span><span class="tag">OBS</span><span class="tag">CapCut</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">AI</div>
+          <div class="skill-name">AI Workflow</div>
+          <div class="tags">
+            <span class="tag">Claude</span><span class="tag">Cursor</span><span class="tag">OpenHands</span><span class="tag">Cline</span><span class="tag">ElevenLabs</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">HARDWARE</div>
+          <div class="skill-name">PC Engineering</div>
+          <div class="tags">
+            <span class="tag">AMD Ryzen</span><span class="tag">MSI</span><span class="tag">BIOS Tuning</span><span class="tag">DDU</span><span class="tag">GPU-Z</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-cat">TOOLS</div>
+          <div class="skill-name">Dev Environment</div>
+          <div class="tags">
+            <span class="tag">VS Code</span><span class="tag">PowerShell</span><span class="tag">Git</span><span class="tag">npm</span><span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="section-sep"></div>
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-label reveal">04 — TRANSPARENT RATES</div>
+      <h2 class="section-title reveal">PRICING & PACKAGES</h2>
+      <p class="section-sub reveal">Demo rates. International in USD. Dhaka in BDT. Scope first, then quote.</p>
 
-<!-- ══ KNOW MORE CTA ══ -->
-<section class="know-more-section">
-  <div class="know-more-inner reveal">
-    <div class="s-eyebrow" style="justify-content:center">03 — The Full Story</div>
-    <h2>KNOW MORE<br><span>ABOUT ME</span></h2>
-    <p>Beyond the services — deep dive into my hardware expertise, IT crash logs, agro-systems lab, woodcraft, full pricing table, Bengali tech content, and complete experience timeline.</p>
-    <div class="know-more-cards">
-      <span class="km-chip">🖥️ IT &amp; Hardware Deep-Dive</span>
-      <span class="km-chip">🤖 AI Agent Stack</span>
-      <span class="km-chip">💰 BDT Pricing Table</span>
-      <span class="km-chip">🌾 Agro-Systems Lab</span>
-      <span class="km-chip">🪵 Woodcraft &amp; CFT Math</span>
-      <span class="km-chip">▶ Bengali YouTube Channel</span>
-      <span class="km-chip">📋 Full Experience Timeline</span>
+      <div class="price-tabs reveal">
+        <button class="price-tab active interactive" data-tab="websites">WEBSITES</button>
+        <button class="price-tab interactive" data-tab="apps">APPS</button>
+        <button class="price-tab interactive" data-tab="maintenance">MAINTENANCE</button>
+      </div>
+
+      <div class="price-panel active" id="panel-websites">
+        <div class="pricing-grid">
+          <div class="price-card featured reveal">
+            <span class="recommended-badge">★ RECOMMENDED</span>
+            <div class="price-name">Business Ecosystem Package</div>
+            <div class="price-usd">$400–$800</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳20,000–40,000</div>
+            <div class="price-bdt-label">BDT</div>
+            <div class="price-divider"></div>
+            <ul class="price-includes">
+              <li>Website + Google Maps + Social setup</li>
+              <li>WhatsApp + Email + Facebook Pixel</li>
+              <li>Logo + Customer data collection</li>
+              <li>1 month post-launch support</li>
+            </ul>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">Basic WordPress Site</div>
+            <div class="price-usd">$150–$300</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳8,000–12,000</div>
+            <div class="price-bdt-label">BDT</div>
+            <div class="price-divider"></div>
+            <ul class="price-includes">
+              <li>5 pages, mobile responsive</li>
+              <li>Contact form, SEO basics, SSL</li>
+            </ul>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">Custom Business Website</div>
+            <div class="price-usd">$300–$600</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳15,000–30,000</div>
+            <div class="price-bdt-label">BDT</div>
+            <div class="price-divider"></div>
+            <ul class="price-includes">
+              <li>Custom design, animations, CMS</li>
+            </ul>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">E-commerce</div>
+            <div class="price-usd">$500–$1,200</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳25,000–50,000</div>
+            <div class="price-bdt-label">BDT</div>
+            <div class="price-divider"></div>
+            <ul class="price-includes">
+              <li>Products, cart, payment gateway</li>
+            </ul>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">Portfolio / CV Site</div>
+            <div class="price-usd">$80–$150</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳3,500–6,000</div>
+            <div class="price-bdt-label">BDT</div>
+            <div class="price-divider"></div>
+            <ul class="price-includes">
+              <li>Single page, clean design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-panel" id="panel-apps">
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <div class="price-name">Android App — Simple (3-5 screens)</div>
+            <div class="price-usd">$300–$600</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳12,000–22,000</div>
+            <div class="price-bdt-label">BDT</div>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">Android App — Medium (API, auth, dashboard)</div>
+            <div class="price-usd">$600–$1,200</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳28,000–50,000</div>
+            <div class="price-bdt-label">BDT</div>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">Android App — Complex</div>
+            <div class="price-usd">$1,200–$2,500</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳Negotiate</div>
+            <div class="price-bdt-label">BDT</div>
+          </div>
+          <div class="price-card reveal">
+            <div class="price-name">Windows Desktop App (Electron)</div>
+            <div class="price-usd">$400–$900</div>
+            <div class="price-usd-label">/ USD</div>
+            <div class="price-sep"></div>
+            <div class="price-bdt">৳18,000–40,000</div>
+            <div class="price-bdt-label">BDT</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-panel" id="panel-maintenance">
+        <table class="maint-table reveal">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>International</th>
+              <th>Local (BDT)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WordPress Site Care</td>
+              <td>$30–$60/mo</td>
+              <td>৳1,500–3,000/mo</td>
+            </tr>
+            <tr>
+              <td>Business Ecosystem</td>
+              <td>$50–$100/mo</td>
+              <td>৳2,500–5,000/mo</td>
+            </tr>
+            <tr>
+              <td>Android App Updates</td>
+              <td>$200–$500/yr</td>
+              <td>৳10,000–22,000/yr</td>
+            </tr>
+            <tr>
+              <td>Tech Support Package</td>
+              <td>$20–$40/mo</td>
+              <td>৳1,000–2,000/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="pricing-note reveal">
+        50% advance required · Wise / PayPal / USDT for international ·
+        bKash / Nagad for local · Rush deadline: +30-50% · 2 revisions included
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label reveal">05 — LET'S WORK</div>
+      <h2 class="section-title reveal">GET IN TOUCH</h2>
+      <p class="section-sub reveal">
+        Middle East, EU, UK, USA, Canada, Australia — and local Dhaka.
+        Open to web projects, apps, IT consulting, digital business setups.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="contact-card reveal interactive">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">Wahidur757@gmail.com</div>
+            </div>
+          </div>
+          <a href="https://wa.me/8801629944975" class="contact-card reveal interactive">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone / WhatsApp</div>
+              <div class="contact-value">01629944975</div>
+            </div>
+          </a>
+          <div class="contact-card reveal">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Bashabo, Dhaka-1214, Bangladesh</div>
+            </div>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon">🎓</div>
+            <div>
+              <div class="contact-label">Education</div>
+              <div class="contact-value">B.Sc. CSE — BIST, Dhaka</div>
+            </div>
+          </div>
+          <div class="contact-card reveal">
+            <div class="contact-icon">⚡</div>
+            <div>
+              <div class="contact-label">Status</div>
+              <div class="contact-value">Available for Remote & Local</div>
+            </div>
+          </div>
+          <a href="https://wa.me/8801629944975" class="btn-whatsapp interactive reveal">
+            📲 CHAT ON WHATSAPP — 01629944975
+          </a>
+        </div>
+        <div class="contact-right reveal">
+          <div class="market-label">CLIENTS I WORK WITH</div>
+          <div class="chips">
+            <span class="chip chip-gold">🇦🇪 UAE</span>
+            <span class="chip chip-gold">🇸🇦 KSA</span>
+            <span class="chip chip-gold">🇶🇦 Qatar</span>
+            <span class="chip chip-gold">🇧🇭 Bahrain</span>
+            <span class="chip chip-gold">🇰🇼 Kuwait</span>
+          </div>
+          <div class="chips">
+            <span class="chip chip-blue">🇬🇧 UK</span>
+            <span class="chip chip-blue">🇺🇸 USA</span>
+            <span class="chip chip-blue">🇨🇦 Canada</span>
+            <span class="chip chip-blue">🇦🇺 Australia</span>
+            <span class="chip chip-blue">🇪🇺 EU</span>
+          </div>
+          <div class="chips">
+            <span class="chip chip-green">📍 Dhaka Local</span>
+            <span class="chip chip-green">🎓 BD Students</span>
+          </div>
+          <div class="availability">
+            <span class="avail-item"><span class="dot-green">●</span> IT Consulting — Open</span>
+            <span class="avail-item"><span class="dot-green">●</span> PC Build — Open</span>
+            <span class="avail-item"><span class="dot-green">●</span> App / Site Dev — Open</span>
+            <span class="avail-item"><span class="dot-gold">◉</span> Student Projects — Budget Friendly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <div class="footer-brand">Puson<span>.Dev</span></div>
+      <div class="footer-meta">Md. Wahidur Rahman Puson · Dhaka, Bangladesh · 2026</div>
     </div>
-    <a href="about.html" class="btn btn-primary" style="font-size:12px;padding:1rem 2.8rem;margin:0 auto;display:inline-flex">
-      → Open Full Profile
-    </a>
-  </div>
-</section>
-
-<div class="section-sep"></div>
-
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="s-eyebrow">04 — Get In Touch</div>
-  <h2 class="s-title">LET'S<br>CONNECT</h2>
-  <div class="divider"></div>
-  <p class="s-desc">Open to IT consulting, PC builds, software development, and content collaboration. Based in Dhaka — rapid field response available.</p>
-  <div class="contact-grid">
-    <a href="mailto:Wahidur757@gmail.com" class="c-card reveal">
-      <div class="c-icon">📧</div>
-      <div><div class="c-lbl">EMAIL</div><div class="c-val">Wahidur757@gmail.com</div></div>
-    </a>
-    <a href="https://wa.me/8801629944975" target="_blank" class="c-card reveal">
-      <div class="c-icon">📲</div>
-      <div><div class="c-lbl">WHATSAPP / CALL</div><div class="c-val">01629944975</div></div>
-    </a>
-    <a href="https://github.com/PusonDev" target="_blank" class="c-card reveal">
-      <div class="c-icon">🐙</div>
-      <div><div class="c-lbl">GITHUB</div><div class="c-val">github.com/PusonDev</div></div>
-    </a>
-    <a href="https://discord.com/users/928661237577957396" target="_blank" class="c-card reveal">
-      <div class="c-icon">💬</div>
-      <div><div class="c-lbl">DISCORD</div><div class="c-val">PusonDev</div></div>
-    </a>
-    <a href="https://www.youtube.com/channel/UCBU8pRp3fF0WvENKOnvq4wQ" target="_blank" class="c-card reveal">
-      <div class="c-icon">▶</div>
-      <div><div class="c-lbl">YOUTUBE — TECH</div><div class="c-val">Puson Tech Channel</div></div>
-    </a>
-    <div class="c-card reveal">
-      <div class="c-icon">📍</div>
-      <div><div class="c-lbl">LOCATION</div><div class="c-val">Bashabo, Dhaka-1214</div></div>
+    <div class="footer-center">
+      <div class="footer-tagline">Built from soil. Shaped by hand. Shipped in code.</div>
+      <a href="about.html" class="footer-about-link interactive">Know More About Me →</a>
     </div>
-  </div>
-  <div class="avail-row">
-    <span class="avail-chip open">● IT Consulting — Open</span>
-    <span class="avail-chip open">● PC Build — Open</span>
-    <span class="avail-chip open">● App / Site Dev — Open</span>
-    <span class="avail-chip neutral">◉ Student Projects — Budget Friendly</span>
-    <span class="avail-chip neutral">◉ Field Service — Dhaka Area</span>
-  </div>
-</section>
+    <div class="social-row">
+      <div class="social-item">
+        <a href="#" class="social-link interactive" aria-label="GitHub">⌘</a>
+        <div class="social-label">GitHub</div>
+      </div>
+      <div class="social-item">
+        <a href="https://wa.me/8801629944975" class="social-link interactive" aria-label="WhatsApp">✆</a>
+        <div class="social-label">WhatsApp</div>
+      </div>
+      <div class="social-item">
+        <a href="#" class="social-link interactive" aria-label="YouTube">▶</a>
+        <div class="social-label">YouTube</div>
+      </div>
+      <div class="social-item">
+        <a href="#" class="social-link interactive" aria-label="Discord">◈</a>
+        <div class="social-label">Discord</div>
+      </div>
+    </div>
+  </footer>
 
-<!-- ══ FOOTER ══ -->
-<footer>
-  <div class="footer-logo">Puson.Dev</div>
-  <p><span>Md. Wahidur Rahman Puson</span> · Dhaka, Bangladesh · 2026</p>
-  <p><span>IT Specialist</span> · <span>App Developer</span> · <span>Agro-Tech Practitioner</span></p>
-  <div class="footer-socials">
-    <a href="https://github.com/PusonDev" target="_blank" class="social-link">🐙 GitHub</a>
-    <a href="https://wa.me/8801629944975" target="_blank" class="social-link">📲 WhatsApp</a>
-    <a href="https://www.youtube.com/channel/UCBU8pRp3fF0WvENKOnvq4wQ" target="_blank" class="social-link">▶ YouTube</a>
-    <a href="https://discord.com/users/928661237577957396" target="_blank" class="social-link">💬 Discord</a>
-  </div>
-  <p style="margin-top:.8rem;color:var(--muted2)">"Grown from soil. Shaped by hand. Built with code."</p>
-</footer>
+  <script>
+    /* 1. Custom cursor */
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let cx = 0, cy = 0, rx = 0, ry = 0;
+    let ringScaleVal = 1;
+    let cursorScale = 1;
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold: 0.1});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
-  });
-});
-</script>
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    document.addEventListener('mousemove', e => {
+      cx = e.clientX;
+      cy = e.clientY;
+    });
+
+    document.addEventListener('mousedown', () => { cursorScale = 0.7; });
+    document.addEventListener('mouseup', () => { cursorScale = 1; });
+
+    document.querySelectorAll('.interactive').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ringScaleVal = 2;
+        ring.classList.add('hover-scale');
+      });
+      el.addEventListener('mouseleave', () => {
+        ringScaleVal = 1;
+        ring.classList.remove('hover-scale');
+      });
+    });
+
+    function tick() {
+      rx = lerp(rx, cx, 0.12);
+      ry = lerp(ry, cy, 0.12);
+      cursor.style.transform = `translate(${cx - 4}px, ${cy - 4}px) scale(${cursorScale})`;
+      ring.style.transform = `translate(${rx - 20}px, ${ry - 20}px) scale(${ringScaleVal})`;
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    /* 2. Nav scroll */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* 3. Hamburger */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    /* 4. IntersectionObserver reveal */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+          /* Counter trigger */
+          entry.target.querySelectorAll('.counter').forEach(animateCounter);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '-50px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* Hero stats counters on load */
+    setTimeout(() => {
+      document.querySelectorAll('.hero-stats .counter').forEach(animateCounter);
+    }, 900);
+
+    /* 5. Counter animation */
+    function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+
+    function animateCounter(el) {
+      if (el.dataset.animated) return;
+      el.dataset.animated = 'true';
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      function frame(now) {
+        const elapsed = now - start;
+        const t = Math.min(elapsed / duration, 1);
+        const val = Math.round(easeOutExpo(t) * target);
+        el.textContent = val + (t === 1 ? suffix : '');
+        if (t < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    /* 6. Magnetic buttons */
+    document.querySelectorAll('.btn-magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const ox = Math.max(-10, Math.min(10, x * 0.4));
+        const oy = Math.max(-10, Math.min(10, y * 0.4));
+        btn.style.transform = `translate(${ox}px, ${oy}px)`;
+        btn.style.transition = 'none';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transition = 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+        btn.style.transform = 'translate(0, 0)';
+      });
+    });
+
+    /* 7. Pricing tabs */
+    document.querySelectorAll('.price-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    /* 8. Stagger delays for card groups */
+    function applyStagger(selector) {
+      document.querySelectorAll(selector).forEach((grid, gi) => {
+        const cards = grid.children;
+        Array.from(cards).forEach((card, i) => {
+          if (card.classList.contains('reveal')) {
+            card.style.transitionDelay = (i * 0.08) + 's';
+          }
+        });
+      });
+    }
+    applyStagger('.services-grid');
+    applyStagger('.projects-grid');
+    applyStagger('.skills-grid');
+    applyStagger('.pricing-grid');
+    applyStagger('#panel-apps .pricing-grid');
+  </script>
 </body>
 </html>
