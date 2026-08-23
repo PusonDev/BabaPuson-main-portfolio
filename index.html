@@ -511,6 +511,80 @@
       padding: 8rem 4rem;
       background: var(--bg);
     }
+    .projects-header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .projects-header-left {
+      max-width: 600px;
+    }
+    .projects-header-left .section-sub {
+      margin-bottom: 0;
+    }
+    .projects-quick-links {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .quick-link-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(14, 22, 38, 0.85);
+      border: 1px solid rgba(0,212,255,0.22);
+      padding: 0.55rem 1.1rem;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #e0f4ff;
+      letter-spacing: 0.05em;
+      transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+    .quick-link-chip::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      opacity: 0.6;
+      transition: opacity 0.25s;
+    }
+    .quick-link-chip:hover {
+      background: rgba(0,212,255,0.12);
+      border-color: rgba(0,212,255,0.6);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,212,255,0.18);
+    }
+    .quick-link-chip:hover::before {
+      opacity: 1;
+      box-shadow: 0 0 10px var(--accent);
+    }
+    .quick-link-chip .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    .quick-link-chip .chip-arrow {
+      color: var(--accent);
+      font-size: 13px;
+      transition: transform 0.25s ease;
+    }
+    .quick-link-chip:hover .chip-arrow {
+      transform: translate(2px, -2px);
+    }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -524,6 +598,8 @@
       position: relative;
       transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
       will-change: transform;
+      display: flex;
+      flex-direction: column;
     }
     .project-card::before {
       content: '';
@@ -543,6 +619,35 @@
     .project-card:hover::before { transform: scaleX(1); }
     @media (min-width: 1200px) {
       .project-card.featured { grid-column: span 2; }
+    }
+    .project-card-actions {
+      margin-top: auto;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .project-live-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.3);
+      padding: 0.4rem 0.85rem;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      transition: all 0.25s ease;
+    }
+    .project-live-btn:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 16px rgba(0,212,255,0.4);
+      transform: translateY(-2px);
     }
 
     .badge {
@@ -962,6 +1067,10 @@
       .hero { grid-template-columns: 1fr; }
       .hero-right { order: 2; }
       .project-card.featured { grid-column: span 1; }
+      .projects-header-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 768px) {
@@ -995,6 +1104,20 @@
         gap: 1.5rem;
       }
       .footer-center { order: -1; }
+
+      .projects-header-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+      }
+      .projects-quick-links {
+        flex-direction: column;
+        width: 100%;
+      }
+      .quick-link-chip {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     @media (min-width: 1200px) {
@@ -1209,9 +1332,25 @@
 
     <!-- PROJECTS -->
     <section id="projects">
-      <div class="section-label reveal">02 — SHIPPED PRODUCTS</div>
-      <h2 class="section-title reveal">THINGS I BUILT</h2>
-      <p class="section-sub reveal">Real products. Not mockups collecting dust.</p>
+      <div class="projects-header-wrap">
+        <div class="projects-header-left">
+          <div class="section-label reveal">02 — SHIPPED PRODUCTS</div>
+          <h2 class="section-title reveal">THINGS I BUILT</h2>
+          <p class="section-sub reveal">Real products. Not mockups collecting dust.</p>
+        </div>
+        <div class="projects-quick-links reveal">
+          <a href="https://drjerin.vercel.app" target="_blank" rel="noopener" class="quick-link-chip interactive">
+            <span class="chip-dot"></span>
+            <span>Dental Point (drjerin.vercel.app)</span>
+            <span class="chip-arrow">↗</span>
+          </a>
+          <a href="https://voltxtech.vercel.app" target="_blank" rel="noopener" class="quick-link-chip interactive">
+            <span class="chip-dot"></span>
+            <span>VoltxTech (voltxtech.vercel.app)</span>
+            <span class="chip-arrow">↗</span>
+          </a>
+        </div>
+      </div>
       <div class="projects-grid">
         <div class="project-card featured reveal">
           <span class="badge badge-active">🚀 ACTIVE · FLAGSHIP</span>
@@ -1234,6 +1373,40 @@
           </div>
         </div>
         <div class="project-card reveal">
+          <span class="badge badge-shipped">◆ SHIPPED · CLIENT</span>
+          <div class="project-title">Dental Point — Dr. Jerin</div>
+          <p class="project-desc">Production-grade dental appointment booking system. WhatsApp Cloud API integration, Supabase backend, automated cron worker, admin dashboard. Full deployment on Vercel.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">WhatsApp API</span>
+            <span class="tag">Vercel</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://drjerin.vercel.app" target="_blank" rel="noopener" class="project-live-btn interactive">
+              <span>Visit Live App</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <span class="badge badge-shipped">◆ SHIPPED · LIVE</span>
+          <div class="project-title">VoltxTech — Digital Tech Hub</div>
+          <p class="project-desc">Modern tech and digital solutions web application. High-performance Next.js architecture, reactive interface, interactive services showcasing, and automated client touchpoints.</p>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Modern UI</span>
+          </div>
+          <div class="project-card-actions">
+            <a href="https://voltxtech.vercel.app" target="_blank" rel="noopener" class="project-live-btn interactive">
+              <span>Visit Live App</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="project-card reveal">
           <span class="badge badge-ongoing">📺 ONGOING · 2022–PRESENT</span>
           <div class="project-title">Bengali Tech YouTube Channel</div>
           <p class="project-desc">Faceless Bengali-language tech channel for Bangladeshi PC builders, gamers, and AI learners. Full production pipeline: script → ElevenLabs AI voiceover → Canva visuals → DaVinci Resolve edit → OBS → publish. Notable: exposed RX 580 2048SP GPU rebranding scam in the Bangladeshi second-hand market.</p>
@@ -1243,17 +1416,6 @@
             <span class="tag">DaVinci Resolve</span>
             <span class="tag">OBS</span>
             <span class="tag">Bengali SEO</span>
-          </div>
-        </div>
-        <div class="project-card reveal">
-          <span class="badge badge-shipped">◆ SHIPPED · CLIENT</span>
-          <div class="project-title">Dental Point — Dr. Jerin</div>
-          <p class="project-desc">Production-grade dental appointment booking system. WhatsApp Cloud API integration, Supabase backend, automated cron worker, admin dashboard. Full deployment on Vercel.</p>
-          <div class="tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">WhatsApp API</span>
-            <span class="tag">Vercel</span>
           </div>
         </div>
         <div class="project-card reveal">
