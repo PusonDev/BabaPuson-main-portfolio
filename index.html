@@ -42,6 +42,15 @@
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
 
+    body.hovering-interactive #cursor-ring {
+      transform: scale(2);
+      border-color: var(--gold);
+    }
+    body.hovering-letter #cursor-ring {
+      transform: scale(0.6);
+    }
+    body.mouse-down #cursor { transform: scale(0.7); }
+
     /* ── Cursor ── */
     #cursor, #cursor-ring {
       position: fixed;
@@ -1133,6 +1142,7 @@
   <nav id="nav">
     <a href="#" class="nav-brand interactive">Puson<span>.Dev</span></a>
     <div class="nav-links">
+      <a href="about.html" class="interactive">About</a>
       <a href="#services" class="interactive">Services</a>
       <a href="#projects" class="interactive">Projects</a>
       <a href="#skills" class="interactive">Skills</a>
@@ -1145,6 +1155,7 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html" class="interactive mobile-link">About</a>
     <a href="#services" class="interactive mobile-link">Services</a>
     <a href="#projects" class="interactive mobile-link">Projects</a>
     <a href="#skills" class="interactive mobile-link">Skills</a>
@@ -1407,7 +1418,7 @@
           </div>
         </div>
         <div class="project-card reveal">
-          <span class="badge badge-ongoing">📺 ONGOING · 2022–PRESENT</span>
+          <span class="badge badge-ongoing">📺 ONGOING</span>
           <div class="project-title">Bengali Tech YouTube Channel</div>
           <p class="project-desc">Faceless Bengali-language tech channel for Bangladeshi PC builders, gamers, and AI learners. Full production pipeline: script → ElevenLabs AI voiceover → Canva visuals → DaVinci Resolve edit → OBS → publish. Notable: exposed RX 580 2048SP GPU rebranding scam in the Bangladeshi second-hand market.</p>
           <div class="tags">
@@ -1693,13 +1704,13 @@
       </p>
       <div class="contact-grid">
         <div class="contact-left">
-          <div class="contact-card reveal interactive">
+          <a href="mailto:Wahidur757@gmail.com" class="contact-card reveal interactive">
             <div class="contact-icon">📧</div>
             <div>
               <div class="contact-label">Email</div>
               <div class="contact-value">Wahidur757@gmail.com</div>
             </div>
-          </div>
+          </a>
           <a href="https://wa.me/8801629944975" class="contact-card reveal interactive">
             <div class="contact-icon">📞</div>
             <div>
@@ -1797,8 +1808,6 @@
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let cx = 0, cy = 0, rx = 0, ry = 0;
-    let ringScaleVal = 1;
-    let cursorScale = 1;
 
     function lerp(a, b, t) { return a + (b - a) * t; }
 
@@ -1807,25 +1816,25 @@
       cy = e.clientY;
     });
 
-    document.addEventListener('mousedown', () => { cursorScale = 0.7; });
-    document.addEventListener('mouseup', () => { cursorScale = 1; });
+    document.addEventListener('mousedown', () => document.body.classList.add('mouse-down'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('mouse-down'));
 
     document.querySelectorAll('.interactive').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        ringScaleVal = 2;
-        ring.classList.add('hover-scale');
-      });
-      el.addEventListener('mouseleave', () => {
-        ringScaleVal = 1;
-        ring.classList.remove('hover-scale');
-      });
+      el.addEventListener('mouseenter', () => document.body.classList.add('hovering-interactive'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering-interactive'));
     });
 
     function tick() {
       rx = lerp(rx, cx, 0.12);
       ry = lerp(ry, cy, 0.12);
+      let ringScale = 1;
+      if (document.body.classList.contains('hovering-letter')) ringScale = 0.6;
+      else if (document.body.classList.contains('hovering-interactive')) ringScale = 2;
+      const cursorScale = document.body.classList.contains('mouse-down') ? 0.7 : 1;
       cursor.style.transform = `translate(${cx - 4}px, ${cy - 4}px) scale(${cursorScale})`;
-      ring.style.transform = `translate(${rx - 20}px, ${ry - 20}px) scale(${ringScaleVal})`;
+      ring.style.transform = `translate(${rx - 20}px, ${ry - 20}px) scale(${ringScale})`;
+      if (document.body.classList.contains('hovering-interactive')) ring.style.borderColor = 'var(--gold)';
+      else ring.style.borderColor = '';
       requestAnimationFrame(tick);
     }
     tick();
